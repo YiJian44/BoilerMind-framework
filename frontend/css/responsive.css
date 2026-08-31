@@ -1,0 +1,77 @@
+@media (max-width: 1024px) {
+  :root { --rail-width: 72px; }
+  .rail { padding-inline: 8px; }
+  .workspace-header { padding-inline: 24px; }
+  .conversation-scroll { padding-inline: 26px; }
+  .composer { width: calc(100% - 40px); }
+  #chatView.is-active.has-process { grid-template-columns: 220px minmax(0,1fr); }
+  .process-sidebar { padding-inline: 10px; }
+}
+@media (max-width: 760px) {
+  body { overflow: hidden; }
+  .app-shell { display: block; }
+  .rail { display: none; }
+  .workspace { height: 100dvh; }
+  .workspace-header { height: 66px; padding-inline: 16px; }
+  .workspace-heading .overline { display: none; }
+  .workspace-heading h1 { margin: 0; font-size: 20px; }
+  .mobile-menu-button { display: grid; place-items: center; width: 40px; height: 40px; }
+  .progress-pill { padding-inline: 10px; }
+  .progress-pill img { display: none; }
+  .conversation-drawer { left: 0; width: min(340px, 92vw); }
+  .conversation-scroll { padding: 24px 16px 20px; }
+  #chatView.is-active.has-process { grid-template-columns: 1fr; grid-template-rows: 94px minmax(0,1fr) auto; }
+  #chatView.has-process .process-sidebar { grid-column: 1; grid-row: 1; display: flex; align-items: center; gap: 10px; padding: 8px 12px; overflow-x: auto; overflow-y: hidden; border-right: 0; border-bottom: 1px solid var(--line); }
+  #chatView.has-process .conversation-scroll { grid-column: 1; grid-row: 2; }
+  #chatView.has-process .composer { grid-column: 1; grid-row: 3; }
+  .process-index-head { min-width: 116px; padding: 0 10px 0 0; border: 0; border-right: 1px solid var(--line); }
+  .process-sidebar nav { display: flex; gap: 5px; margin: 0; }
+  .process-sidebar nav button { min-width: 118px; padding: 8px; }
+  .process-run-link { display: none; }
+  .welcome-state { padding-top: 5vh; }
+  .welcome-state h2 { font-size: 40px; }
+  .welcome-hero { grid-template-columns: 1fr; gap: 18px; }
+  .welcome-loop { max-width: 460px; }
+  .example-prompts { grid-template-columns: 1fr; }
+  .prompt-card { min-height: 0; }
+  .stage-list { padding-left: 45px; }
+  .stage-list::before { left: 15px; }
+  .stage-marker { left: -44px; width: 28px; height: 28px; }
+  .stage-head { align-items: flex-start; }
+  .execution-row { grid-template-columns: 32px minmax(0, 1fr); padding: 15px; }
+  .execution-row .row-status { grid-column: 2; }
+  .stage-glance, .raw-metrics { grid-template-columns: 1fr; }
+  .elo-table > div { grid-template-columns: 30px 48px 66px minmax(100px,1fr); }
+  .composer { width: calc(100% - 20px); margin-bottom: 10px; padding: 12px; }
+  .composer-footer { align-items: flex-end; }
+  .character-count, .send-button span { display: none; }
+  .send-button { width: 44px; padding: 0; justify-content: center; }
+  .history-row { grid-template-columns: minmax(0, 1fr) 86px; }
+  .history-row > :last-child { display: none; }
+  .history-toolbar { flex-wrap: wrap; }
+  .history-toolbar input { flex-basis: 100%; }
+  .metric-grid, .verdict-strip { grid-template-columns: 1fr; }
+  .report-toolbar { align-items: flex-start; gap: 12px; }
+  .report-actions { flex-wrap: wrap; justify-content: flex-end; }
+  .section-intro, .history-toolbar, .history-table, .running-list, .capability-list, .report-toolbar, .report-reader { width: calc(100% - 32px); }
+  .feature-view.is-active { padding: 20px 14px 28px; }
+  .feature-toolbar { align-items: flex-start; }
+  #unityView .unity-toolbar-copy { display: block; }
+  #unityView .unity-toolbar p { margin-top: 7px; overflow: visible; text-overflow: clip; white-space: normal; }
+  .unity-stage { height: auto; min-height: 0; border-radius: 14px; }
+  .knowledge-link { margin-top: 24px; padding: 18px; }
+  .visual-summary { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .visual-summary > div:nth-child(2) { border-right: 0; }
+  .visual-summary > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .visual-grid { grid-template-columns: 1fr; }
+  .visual-panel { min-height: 360px; padding: 17px; }
+}
+
+@media (max-width: 900px) {
+  .launch-stages { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .launch-stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .assistant-progress-steps { grid-template-columns: 1fr; }
+}

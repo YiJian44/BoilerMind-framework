@@ -1,0 +1,662 @@
+[
+  {
+    "path": "PACKAGE_MANIFEST.json",
+    "size_bytes": 1321,
+    "sha256": "2f27d240e2a92475bea0a08c96cd4b8495961da136e910d8fcae4fc82170a567"
+  },
+  {
+    "path": "README.md",
+    "size_bytes": 2065,
+    "sha256": "3b88017f8382a842131e44ffa8ced436e58c112bbe6bea4c7f4b08bfc2293550"
+  },
+  {
+    "path": "data\\boiler_181var_clean.csv",
+    "size_bytes": 31188329,
+    "sha256": "9c099b793c6d63edaeb6b3514415e5ba209eb2bf6ac5c940743485eebd56891c"
+  },
+  {
+    "path": "environment\\hardware.json",
+    "size_bytes": 179,
+    "sha256": "173153ffcc60585f91b4e2962c2f3110078bc286a036fee0022f3e5cf55a80e1"
+  },
+  {
+    "path": "environment\\pip_freeze.txt",
+    "size_bytes": 2158,
+    "sha256": "b137ab0fe18692052956bb93ac15f831901616c31c36d18580019bd0c3691e47"
+  },
+  {
+    "path": "environment\\python_version.txt",
+    "size_bytes": 116,
+    "sha256": "533aedccafb21c94820e7d44a050bf8669a14ab3a807c09a54bed69daefe9ce2"
+  },
+  {
+    "path": "environment\\torch_environment.json",
+    "size_bytes": 303,
+    "sha256": "34290f900627dcdc9eadb786f70dafced5f55ef295901ae9940db74c5c97b4ef"
+  },
+  {
+    "path": "model_library\\SHA256SUMS.json",
+    "size_bytes": 20448,
+    "sha256": "f21e799fae2c6fedc3b2b60fc9e3343f252b004906ee8265de0e75f9bced43c0"
+  },
+  {
+    "path": "model_library\\model_library.json",
+    "size_bytes": 32142,
+    "sha256": "93033ff3181737276c114c1bc3323f069eab8ca45cf41b514d5a89f3d901756f"
+  },
+  {
+    "path": "model_library\\verify_output.txt",
+    "size_bytes": 1045,
+    "sha256": "4514158e5c76f335ea7f654a0ba58456576eb65ccdc826f03e4584b17d9abcb1"
+  },
+  {
+    "path": "model_library\\logs\\31v_direct\\h40\\models.json",
+    "size_bytes": 44582,
+    "sha256": "11c7f5222b1186e7792469be72ccf686beb0803754c2c3dc905041c723f129d6"
+  },
+  {
+    "path": "model_library\\logs\\31v_direct\\h80\\models.json",
+    "size_bytes": 39476,
+    "sha256": "d407cd066c3bc1be9f4a728a4b0bce224c35be80fba420adb80a55390790ac45"
+  },
+  {
+    "path": "model_library\\manifests\\31v_direct\\h40\\manifest.json",
+    "size_bytes": 26835,
+    "sha256": "4a666debc286843da0c7936447b5e7152a7bfdfdb4e56344c2b16d0a83fbef44"
+  },
+  {
+    "path": "model_library\\manifests\\31v_direct\\h80\\manifest.json",
+    "size_bytes": 26834,
+    "sha256": "36e3e3fc665abab7026332ffa22154fef7a1d6b34eb513b9a51abe5bc5dacaac"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\bayesianridge_locked_test_predictions.csv",
+    "size_bytes": 1032472,
+    "sha256": "9a774b7467b6c2f4f62209965d76764c2eb8432d2f785971dcc5b8dfd8289e21"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\bayesianridge_validation_predictions.csv",
+    "size_bytes": 513144,
+    "sha256": "476971c56a9ee3bb6b49fd491cb3be03565441327f411ebf6f8317638cc84320"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\dlinear_locked_test_predictions.csv",
+    "size_bytes": 1001999,
+    "sha256": "363b6e8623659dadf792c0e319c594a1ce57bea9196ad8dfeb9d027e8e829e35"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\dlinear_validation_predictions.csv",
+    "size_bytes": 498538,
+    "sha256": "98c448e1cf6cfdfe7b3ffd89080074107da11d1ee85dc2c29c44f04e2b98eb1b"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\elasticnet_locked_test_predictions.csv",
+    "size_bytes": 1015608,
+    "sha256": "79049936995c300958c078ea1a5b76a61d184d6876190b5a7cff969a9b809953"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\elasticnet_validation_predictions.csv",
+    "size_bytes": 505328,
+    "sha256": "fcb8185f371b690680a113f9f3ec959e70045bb6b020ec16bf19cd6501d3157c"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\gru_locked_test_predictions.csv",
+    "size_bytes": 981092,
+    "sha256": "b922f4981e98ef6a75ee2c0c146eda8ca64747bcf07ce8ee3fd9f597c78a2a79"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\gru_validation_predictions.csv",
+    "size_bytes": 487999,
+    "sha256": "19288f8256ded16d0e9a6657ba140bc18b39a925823b69be12506d2561967c2f"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\hgb_locked_test_predictions.csv",
+    "size_bytes": 981412,
+    "sha256": "9b0cd759503999096e9da9fb9ad148c1114ce1f8c381825ecf204ccbd2b3ce4e"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\hgb_validation_predictions.csv",
+    "size_bytes": 487936,
+    "sha256": "00251efc412d132739b7aae1386ae39e42bab0c2c16345ecd54531201d5a34d8"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\knn_locked_test_predictions.csv",
+    "size_bytes": 980648,
+    "sha256": "769b970bd7fda8956500a9c294527926900c32ae397944862d790a95e907dc40"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\knn_validation_predictions.csv",
+    "size_bytes": 487878,
+    "sha256": "d63c96561a865ca56bc8ab2639a4ce00a467737eb4ead6df635a8defd84c8c7a"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\lstm_locked_test_predictions.csv",
+    "size_bytes": 986109,
+    "sha256": "bef20b75ca87d6d2281cad990e17dc75392ad58e6446616773b4b4a83f028be8"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\lstm_validation_predictions.csv",
+    "size_bytes": 490244,
+    "sha256": "8f6f873992013521fa140cdcfaeacf8327905ffbed2eb37599527a7f7b871789"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\mlp_locked_test_predictions.csv",
+    "size_bytes": 981099,
+    "sha256": "d075e784c4649da3edbec58ec68a9ab7285ac739efafd459e5032ad1f45dfedc"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\mlp_validation_predictions.csv",
+    "size_bytes": 488348,
+    "sha256": "75b0aeed1b2a0779cf6fd24dcd32455714ced429485b23fd91209b754b9ac00a"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\persistence_locked_test_predictions.csv",
+    "size_bytes": 1021217,
+    "sha256": "a35aea17c81c509d6a4c959b1d8a29d5ab1cc48a42e28cfcec375f3263e096db"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\persistence_validation_predictions.csv",
+    "size_bytes": 508061,
+    "sha256": "77a3a0429706a8d015608dbe39db5e2ab4a4bd2e33833c3d994e36f9abb8c169"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\pls_locked_test_predictions.csv",
+    "size_bytes": 981690,
+    "sha256": "70908b4e64d3b99d9d96de2d48c84e7b207b8a93485d05409bcc7351bca28d7a"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\pls_validation_predictions.csv",
+    "size_bytes": 488119,
+    "sha256": "71d57ab90b36b993ffe136be7cfb6e90a84d40a387e9f0a3af10ec6f1241a394"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\rf_locked_test_predictions.csv",
+    "size_bytes": 976420,
+    "sha256": "e2107a48c4064ba735c9b97ea12b183688a54d9ff877b5b1dd079452e4372ba1"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\rf_validation_predictions.csv",
+    "size_bytes": 485322,
+    "sha256": "849215e250b791272aa69a14c60fee583710df37076278edc659621f1d029da3"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\ridge_locked_test_predictions.csv",
+    "size_bytes": 992246,
+    "sha256": "7cc1ec8026234ced6447df3ff3aa4b33204d1d825534be5576c598a5d96a4c32"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\ridge_validation_predictions.csv",
+    "size_bytes": 493025,
+    "sha256": "521c5452f54498a6640290757d894c5a062865463343525f8f1d4773a1c4e2e1"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\svr_locked_test_predictions.csv",
+    "size_bytes": 981555,
+    "sha256": "e4dce88577cc62b20068375b082225fe9e7665958453a99a2c785da133ca343c"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\svr_validation_predictions.csv",
+    "size_bytes": 487920,
+    "sha256": "fd1dc68ca2fe9e6ce04e6553aabfba2e6d3b3fde9bd11250aba60b44afe60618"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\transformer_locked_test_predictions.csv",
+    "size_bytes": 1021632,
+    "sha256": "e6809e7ec34606b44ec84d05a381f2395d8496356a0bcdccdaa7e3d87ec0e34e"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h40\\transformer_validation_predictions.csv",
+    "size_bytes": 507995,
+    "sha256": "4eb6fc6ad82dc5156caf3f58914d1a03b218b76f46c09c914bbc6cc82b8371f7"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\bayesianridge_locked_test_predictions.csv",
+    "size_bytes": 1030895,
+    "sha256": "51718782d6a25e9037c1a5986e05b60b2858b004ead322be7f8b7afa467679c1"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\bayesianridge_validation_predictions.csv",
+    "size_bytes": 512483,
+    "sha256": "d2bf3da8108d8c8ae54e9c880906a5ab3c62ea8164cfa32bc4a6262e33344f07"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\dlinear_locked_test_predictions.csv",
+    "size_bytes": 1000245,
+    "sha256": "805a2f85ffe6bf5faa4263de7f0918d9b7a52ed2f06ddc58da51f5ffd94d01df"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\dlinear_validation_predictions.csv",
+    "size_bytes": 497610,
+    "sha256": "f46684229211b9752420e5b1207661b80b13ff972ed86c45fdebd9c3f94b2330"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\elasticnet_locked_test_predictions.csv",
+    "size_bytes": 1015186,
+    "sha256": "71efa01281ac1f56ae2223ee8735b30e6106b0dcd94ec1aa8741581312f2bf97"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\elasticnet_validation_predictions.csv",
+    "size_bytes": 504948,
+    "sha256": "072b689a00097479841ac5fe2d72fa93ecd49b13f788d5caeeabf38e0b21121a"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\gru_locked_test_predictions.csv",
+    "size_bytes": 979305,
+    "sha256": "c1b96be728ecc860c1d077e1c8c4de23d26f734658bc29e4056d0017b31a3524"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\gru_validation_predictions.csv",
+    "size_bytes": 487437,
+    "sha256": "ae13381d962605911d5616b9046263f7774c75a4d8b2ba77eaf5292f38abf628"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\hgb_locked_test_predictions.csv",
+    "size_bytes": 979644,
+    "sha256": "0cfa9c39e5509ab0c2e7fc50684ded622b23f2e8a0f7b84bdba70da311893949"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\hgb_validation_predictions.csv",
+    "size_bytes": 487134,
+    "sha256": "ee175371424b4f08a3910e81a281d4d5196627c4f4dfa64506c5705a099456cd"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\knn_locked_test_predictions.csv",
+    "size_bytes": 979101,
+    "sha256": "f5a1238ee9aabe3fa9bd627832f94423256b87049ac15256c4f747551fceb24b"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\knn_validation_predictions.csv",
+    "size_bytes": 487219,
+    "sha256": "8b03025a04f51c28356f4189aaec448897da6d6fe506e00d8b3cc307290eac09"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\lstm_locked_test_predictions.csv",
+    "size_bytes": 985146,
+    "sha256": "650d27e7d6a291ac7d7b1201be6baa5fcc1865d908cf31f5a0086b99e728474d"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\lstm_validation_predictions.csv",
+    "size_bytes": 489835,
+    "sha256": "7c4ed2b1e653985bb0fc34f1f1eb7c3df0ccd477739e111c165abfbdbf30e5be"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\mlp_locked_test_predictions.csv",
+    "size_bytes": 980189,
+    "sha256": "f5a3cb85ddc875dc0802182b2152c6dbe11daccc32a4a9c21a1fc42400e47c94"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\mlp_validation_predictions.csv",
+    "size_bytes": 487281,
+    "sha256": "b221a06ac8a5a24d2731d024c268d04f05112f5b9564639eaadb7bdaab8a5aa1"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\persistence_locked_test_predictions.csv",
+    "size_bytes": 1019744,
+    "sha256": "71f8fd3084d18c820a676c8f57b71cac8f00ee597e1df52c3583b715e535b5ba"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\persistence_validation_predictions.csv",
+    "size_bytes": 507202,
+    "sha256": "248d4631d9c8f706ec7691b790298ed8c4994a913a83b27b859cce3fb2fc2c33"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\pls_locked_test_predictions.csv",
+    "size_bytes": 980269,
+    "sha256": "ea5a9e269c8af3d5c20adf099cda05afd33c2825c177c9c805baf87f0ef39ff1"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\pls_validation_predictions.csv",
+    "size_bytes": 487315,
+    "sha256": "21b8f5a3e9354288f85c0c22ac046c960c62faae9e00bb4edccd8f19c904e504"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\rf_locked_test_predictions.csv",
+    "size_bytes": 974161,
+    "sha256": "93adc672447708002aad290fd92cac4da713270089b8f6e475e5f6ed106440f7"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\rf_validation_predictions.csv",
+    "size_bytes": 484658,
+    "sha256": "6ad4b4748b9a2f43ad0a10e90ede644b0d75c4987cef4cf3f203a1e839663732"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\ridge_locked_test_predictions.csv",
+    "size_bytes": 990572,
+    "sha256": "962fee3f241d5e7ce16cd8fecd98c07975a74c69b9349d59f406c25cac7327c9"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\ridge_validation_predictions.csv",
+    "size_bytes": 492411,
+    "sha256": "6f92c29e5d918e81ca96984fb65ecda467b42135942e6bfa1ab07317a3229386"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\svr_locked_test_predictions.csv",
+    "size_bytes": 979450,
+    "sha256": "cd2c445462d13c1024037e84c606cb2c561b37528701a4745aba70ca570ad41d"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\svr_validation_predictions.csv",
+    "size_bytes": 487075,
+    "sha256": "e3497155323b7d348c573a9f73edc6ef1c4c03c8d7bb773d789e91f5c1da33ba"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\transformer_locked_test_predictions.csv",
+    "size_bytes": 1019560,
+    "sha256": "cfae892adf0ddd429e941977d26071ed4a6778a1ae6382e61f9dab38c073cb8c"
+  },
+  {
+    "path": "model_library\\predictions\\31v_direct\\h80\\transformer_validation_predictions.csv",
+    "size_bytes": 507392,
+    "sha256": "e2cadb47c1cd7c15427dc55fc0a27a1e2452caf50eea38a989cb540dacb4ca0a"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\bayesianridge\\model.joblib",
+    "size_bytes": 3090967,
+    "sha256": "f4e483002ec2196bd1250b479d748c0a74c8e5fbb46cac0909d46839eac4ec28"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\bayesianridge\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "f45f268226d351c08b8d133fbd04a1bb42ea64e3107d00655f56661fbf1122f2"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\dlinear\\model.pth",
+    "size_bytes": 7369,
+    "sha256": "1d98344d7336ad3e9dcb70071798eeb6fe2aa58e60a6adb719a88ea20646509d"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\dlinear\\target_scaler.json",
+    "size_bytes": 213,
+    "sha256": "277e3c9db232b0156560c82e0aa94187679fd31e8aa12acaa422a4a7741648f5"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\elasticnet\\model.joblib",
+    "size_bytes": 5608,
+    "sha256": "142bf6ecb05e4078106096bbd25a6f1d58bc0f69a09146850e446aa799b7aeb0"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\elasticnet\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "f45f268226d351c08b8d133fbd04a1bb42ea64e3107d00655f56661fbf1122f2"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\gru\\model.pth",
+    "size_bytes": 177231,
+    "sha256": "d8634e498a52712d7c3b3ac1b8fbad7ebbbcf0b3091a552fc1529491f6c544bf"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\gru\\target_scaler.json",
+    "size_bytes": 213,
+    "sha256": "277e3c9db232b0156560c82e0aa94187679fd31e8aa12acaa422a4a7741648f5"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\hgb\\model.joblib",
+    "size_bytes": 1840462,
+    "sha256": "c93708c1e3a5ceb22376a50dcd7f736fd1b854a3c20de0f38677434aef717a62"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\hgb\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "f45f268226d351c08b8d133fbd04a1bb42ea64e3107d00655f56661fbf1122f2"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\knn\\model.joblib",
+    "size_bytes": 99936948,
+    "sha256": "cd8d062287532df4a4d613db6c613355615f76d59fb4eaf3f0c0f8e329e58c2f"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\knn\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "f45f268226d351c08b8d133fbd04a1bb42ea64e3107d00655f56661fbf1122f2"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\lstm\\model.pth",
+    "size_bytes": 235343,
+    "sha256": "334b78a18018ef42917f5feeb61bf4272e63855672b6043bc466ec52f9ee7cb3"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\lstm\\target_scaler.json",
+    "size_bytes": 213,
+    "sha256": "277e3c9db232b0156560c82e0aa94187679fd31e8aa12acaa422a4a7741648f5"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\mlp\\model.joblib",
+    "size_bytes": 966367,
+    "sha256": "684daba63446e30019d7aecddfc5d472a51f104844fe6e7a66b1e2a3c856651e"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\mlp\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "f45f268226d351c08b8d133fbd04a1bb42ea64e3107d00655f56661fbf1122f2"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\pls\\model.joblib",
+    "size_bytes": 5285367,
+    "sha256": "6d5eb180495929fe3048524e2c9cfef9eb487ad13259dd1096e0b49e3bd598ff"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\pls\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "f45f268226d351c08b8d133fbd04a1bb42ea64e3107d00655f56661fbf1122f2"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\rf\\model.joblib",
+    "size_bytes": 193001809,
+    "sha256": "8e206794c84f4d8c2531083465199fea99ef07193157030f5a3b279c5740c3ee"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\rf\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "f45f268226d351c08b8d133fbd04a1bb42ea64e3107d00655f56661fbf1122f2"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\ridge\\model.joblib",
+    "size_bytes": 5513,
+    "sha256": "de876afb47b720090f1a0a9faca63b4a47822cf1cabb007f419eb1f341f38f73"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\ridge\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "f45f268226d351c08b8d133fbd04a1bb42ea64e3107d00655f56661fbf1122f2"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\svr\\model.joblib",
+    "size_bytes": 20757988,
+    "sha256": "428aaccd6e95bdb30a5c42de4f0401e0e01abfd42949847680a9e9a2fcd16dfc"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\svr\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "f45f268226d351c08b8d133fbd04a1bb42ea64e3107d00655f56661fbf1122f2"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\transformer\\model.pth",
+    "size_bytes": 290310,
+    "sha256": "059ae90e4544f235b92b90b00b1e4196a3aaa5c49fc83f6185c5973c913a93fb"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h40\\transformer\\target_scaler.json",
+    "size_bytes": 213,
+    "sha256": "277e3c9db232b0156560c82e0aa94187679fd31e8aa12acaa422a4a7741648f5"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\bayesianridge\\model.joblib",
+    "size_bytes": 3090967,
+    "sha256": "467376ccc88113720fb028f8c3094a13fbe2c4d6d25e105121d4af3d8cc1844c"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\bayesianridge\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "bb8839ef37681a2ec51b98c6dd5d80de43defce6c70720a99401c047bdcf6818"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\dlinear\\model.pth",
+    "size_bytes": 7369,
+    "sha256": "65c538130ae79a64ceb9f5d74379196af5019186885b132e6556a8271af1d9db"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\dlinear\\target_scaler.json",
+    "size_bytes": 212,
+    "sha256": "6b9304f3c9de0cfbfb40bb75ace8027e76f99ff5e942e6db58f718e86fea95b4"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\elasticnet\\model.joblib",
+    "size_bytes": 5608,
+    "sha256": "9cd274a01072edbf488dc798a3a2d575d77000af715013f56e4ed989047e89a8"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\elasticnet\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "bb8839ef37681a2ec51b98c6dd5d80de43defce6c70720a99401c047bdcf6818"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\gru\\model.pth",
+    "size_bytes": 177231,
+    "sha256": "05706cbecfe3a6fc2129fb05f4666119d5d5da554802e38c564333e2d0c5b29b"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\gru\\target_scaler.json",
+    "size_bytes": 212,
+    "sha256": "6b9304f3c9de0cfbfb40bb75ace8027e76f99ff5e942e6db58f718e86fea95b4"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\hgb\\model.joblib",
+    "size_bytes": 1840462,
+    "sha256": "25bd6e85fccca2893754806a81fd673f941106568f7e7e593e41ae6f84b9b1f4"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\hgb\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "bb8839ef37681a2ec51b98c6dd5d80de43defce6c70720a99401c047bdcf6818"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\knn\\model.joblib",
+    "size_bytes": 99777972,
+    "sha256": "d8b38f0132a29cd0cef37f2371d4264dac1629732b1e4994bdcadf23bf91eaaf"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\knn\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "bb8839ef37681a2ec51b98c6dd5d80de43defce6c70720a99401c047bdcf6818"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\lstm\\model.pth",
+    "size_bytes": 235343,
+    "sha256": "8248dc063db0937d6cfa7a2ecc2b219aca7c2f98f4c84c85d38a5b75bc6029a4"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\lstm\\target_scaler.json",
+    "size_bytes": 212,
+    "sha256": "6b9304f3c9de0cfbfb40bb75ace8027e76f99ff5e942e6db58f718e86fea95b4"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\mlp\\model.joblib",
+    "size_bytes": 966031,
+    "sha256": "74d3ba7fff988009e96d73b2b15ea18d34cd3a42f5cf1dbab8b51431c07586e7"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\mlp\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "bb8839ef37681a2ec51b98c6dd5d80de43defce6c70720a99401c047bdcf6818"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\pls\\model.joblib",
+    "size_bytes": 5277175,
+    "sha256": "532038221407fe291c0677042980870da32dc81917bdb891cd25887be4de8b3e"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\pls\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "bb8839ef37681a2ec51b98c6dd5d80de43defce6c70720a99401c047bdcf6818"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\rf\\model.joblib",
+    "size_bytes": 188492449,
+    "sha256": "196bcba8d49dafa14ea94ecffe40eac966e7bcf873af7468c110e3b504fc3022"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\rf\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "bb8839ef37681a2ec51b98c6dd5d80de43defce6c70720a99401c047bdcf6818"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\ridge\\model.joblib",
+    "size_bytes": 5513,
+    "sha256": "e8f5cfae457098f353503d313ec3930918e1d17a1351bd0cec23c146a7af6238"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\ridge\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "bb8839ef37681a2ec51b98c6dd5d80de43defce6c70720a99401c047bdcf6818"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\svr\\model.joblib",
+    "size_bytes": 21983060,
+    "sha256": "66afd7d497dca89e7789fe8f671b361fb3646d1e7b84e42dd147de98b805284f"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\svr\\scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "bb8839ef37681a2ec51b98c6dd5d80de43defce6c70720a99401c047bdcf6818"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\transformer\\model.pth",
+    "size_bytes": 290310,
+    "sha256": "930a5d03ce05dfc1466424489409f24038adadcc75b5330cc63fee9f875166ec"
+  },
+  {
+    "path": "model_library\\weights\\31v_direct\\h80\\transformer\\target_scaler.json",
+    "size_bytes": 212,
+    "sha256": "6b9304f3c9de0cfbfb40bb75ace8027e76f99ff5e942e6db58f718e86fea95b4"
+  },
+  {
+    "path": "runtime\\31v_data\\dataset_manifest.json",
+    "size_bytes": 5621,
+    "sha256": "b54880b10a9aa4ef2f0d01e2fda15e75bc73b48f0dc6a87cd8cb81298f3cad3b"
+  },
+  {
+    "path": "runtime\\31v_data\\h40.npz",
+    "size_bytes": 125732030,
+    "sha256": "91bffe2f7c5e58d58c31b4e8c1eb6612b0d33ed2fd0e9afe1295dc47c20f8943"
+  },
+  {
+    "path": "runtime\\31v_data\\h40_scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "57e173b7113ef39413621d38e82d28a60e872f0e93bba3e75efa11dd33132709"
+  },
+  {
+    "path": "runtime\\31v_data\\h80.npz",
+    "size_bytes": 125532030,
+    "sha256": "3b1eb59918cecf38e7a665f36cc56b1657eefc7337d4be28354c7d69b1bd73e1"
+  },
+  {
+    "path": "runtime\\31v_data\\h80_scaler.joblib",
+    "size_bytes": 1919,
+    "sha256": "7f4505f69114ac6e05a89dc738ddedc332523aa51efc342b4b9a910b18fd4e17"
+  },
+  {
+    "path": "scripts\\build_31v_dataset.py",
+    "size_bytes": 3864,
+    "sha256": "c66e4c7e2ec2406aa08058f747589b25887d0f4718a8be74d215d075e24332c3"
+  },
+  {
+    "path": "scripts\\dump_env.py",
+    "size_bytes": 3316,
+    "sha256": "85f30169d75e74792894fdf52176ea9011d7a303b3f6cae8c4b63c951fb0942c"
+  },
+  {
+    "path": "scripts\\train_31v_library.py",
+    "size_bytes": 24701,
+    "sha256": "464c32e95354386657b1916b7e84f777ef1920e8e0ac70a8a344bd0edd719214"
+  },
+  {
+    "path": "scripts\\v31_common.py",
+    "size_bytes": 13218,
+    "sha256": "0d0130b9005bf9f3cab79461523e3cb9d6032a929fd9852396a3a886f9924056"
+  },
+  {
+    "path": "scripts\\verify_31v_library.py",
+    "size_bytes": 2363,
+    "sha256": "cc07705679f7d88bf9b85ef06da0486b0c73dd499b078d303a4bebcdc59dc5ed"
+  }
+]

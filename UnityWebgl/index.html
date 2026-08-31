@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>UnityWebgl</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; background: #060e20; touch-action: none; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+        #unity-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+        #unity-canvas { width: min(100vw, calc(100vh * 16 / 9)); height: min(100vh, calc(100vw * 9 / 16)); background: #000; touch-action: none; }
+        
+        /* === 加载界面 === */
+        #unity-loading {
+            position: fixed; inset: 0; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            background: radial-gradient(ellipse at center, #0a1633 0%, #060e20 60%, #030810 100%);
+            z-index: 100; font-family: "Microsoft YaHei", sans-serif;
+            transition: opacity 0.6s ease;
+        }
+        #unity-loading.fade-out { opacity: 0; pointer-events: none; }
+        
+        /* 旋转的锅炉图标 */
+        #loading-icon {
+            width: 80px; height: 80px; margin-bottom: 30px;
+            border: 3px solid rgba(0, 212, 255, 0.15);
+            border-top-color: rgba(0, 212, 255, 0.9);
+            border-right-color: rgba(0, 212, 255, 0.5);
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        #loading-title {
+            font-size: 28px; font-weight: 700; letter-spacing: 2px;
+            background: linear-gradient(90deg, #00d4ff, #4facfe);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 6px;
+        }
+        #loading-subtitle {
+            font-size: 13px; color: rgba(120, 160, 200, 0.7);
+            letter-spacing: 1px; margin-bottom: 36px; text-transform: uppercase;
+        }
+        
+        /* 进度条 */
+        #unity-progress-bar {
+            width: 400px; max-width: 80vw; height: 6px;
+            background: rgba(30, 60, 114, 0.4); border-radius: 3px;
+            overflow: hidden; position: relative;
+        }
+        #unity-progress-fill {
+            width: 0%; height: 100%;
+            background: linear-gradient(90deg, #0066aa, #00d4ff);
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+            transition: width 0.3s ease; border-radius: 3px;
+        }
+        #unity-progress-text {
+            margin-top: 14px; font-size: 18px; font-weight: 600;
+            color: #00d4ff; font-family: "Consolas", monospace;
+        }
+        #loading-tip {
+            margin-top: 20px; font-size: 13px; color: rgba(120, 160, 200, 0.5);
+            max-width: 380px; text-align: center; line-height: 1.6;
+        }
+        
+        /* 底部装饰线 */
+        #loading-accent {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0,212,255,0.4), transparent);
+        }
+        
+        /* 四角装饰 */
+        .loading-corner {
+            position: absolute; width: 30px; height: 30px;
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        .corner-tl { top: 20px; left: 20px; border-top: 2px solid; border-left: 2px solid; }
+        .corner-tr { top: 20px; right: 20px; border-top: 2px solid; border-right: 2px solid; }
+        .corner-bl { bottom: 20px; left: 20px; border-bottom: 2px solid; border-left: 2px solid; }
+        .corner-br { bottom: 20px; right: 20px; border-bottom: 2px solid; border-right: 2px solid; }
+        
+        /* 状态栏 */
+        #status-bar {
+            position: fixed; top: 50px; right: 13px;
+            display: flex; align-items: center; gap: 8px;
+            padding: 6px 14px; border-radius: 6px;
+            background: rgba(0,0,0,0.6); color: #ccc;
+            font-family: "Microsoft YaHei", sans-serif; font-size: 13px; z-index: 50;
+        }
+        #status-dot { width: 8px; height: 8px; border-radius: 50%; background: #e74c3c; transition: background 0.3s; }
+        #status-dot.connected { background: #2ecc71; }
+    </style>
+</head>
+<body>
+<div id="unity-container"><canvas id="unity-canvas" tabindex="-1"></canvas></div>
+<div id="unity-loading">
+    <div class="loading-corner corner-tl"></div>
+    <div class="loading-corner corner-tr"></div>
+    <div class="loading-corner corner-bl"></div>
+    <div class="loading-corner corner-br"></div>
+    <div id="loading-icon"></div>
+    <div id="loading-title">UnityWebgl</div>
+    <div id="loading-subtitle">BOILER DIGITAL TWIN SYSTEM</div>
+    <div id="unity-progress-bar"><div id="unity-progress-fill"></div></div>
+    <div id="unity-progress-text">0%</div>
+    <div id="loading-tip">正在初始化数字孪生系统...</div>
+    <div id="loading-accent"></div>
+</div>
+<div id="status-bar">
+    <div id="status-dot"></div>
+    <span id="status-text">未连接</span>
+</div>
+<script src="Build/UnityWebgl.loader.js"></script>
+<script src="unity-bridge.js"></script>
+<script>
+    var RUN_ID = new URLSearchParams(window.location.search).get("run_id");
+    var WS_SERVER_URL = "ws://" + window.location.hostname + ":8765/api/v1/research-runs/" + encodeURIComponent(RUN_ID || "missing-run-id") + "/events";
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading");
+    var progressFill = document.querySelector("#unity-progress-fill");
+    var progressText = document.querySelector("#unity-progress-text");
+    var loadingTip = document.querySelector("#loading-tip");
+    var statusDot = document.querySelector("#status-dot");
+    var statusText = document.querySelector("#status-text");
+
+    // 加载提示轮播
+    var tips = [
+        "正在加载3D模型资源...",
+        "正在初始化水冷壁监测系统...",
+        "正在连接WebSocket数据通道...",
+        "正在准备工况状态管理器...",
+        "正在加载热力图着色器...",
+        "正在初始化故障报警面板...",
+        "即将完成，请稍候..."
+    ];
+    var tipIndex = 0;
+    var tipTimer = setInterval(function() {
+        tipIndex = (tipIndex + 1) % tips.length;
+        if (loadingTip) loadingTip.textContent = tips[tipIndex];
+    }, 2500);
+
+    createUnityInstance(canvas, {
+        dataUrl: "Build/UnityWebgl.data",
+        frameworkUrl: "Build/UnityWebgl.framework.js",
+        codeUrl: "Build/UnityWebgl.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "UnityWebgl",
+        productVersion: "0.2"
+    }, function(progress) {
+        var pct = Math.round(progress * 100);
+        progressFill.style.width = pct + "%";
+        progressText.textContent = pct + "%";
+    }).then(function(instance) {
+        window.unityInstance = instance;
+        clearInterval(tipTimer);
+        if (loadingTip) loadingTip.textContent = "加载完成，正在启动...";
+        progressFill.style.width = "100%";
+        progressText.textContent = "100%";
+        // 淡出过渡
+        setTimeout(function() {
+            loadingBar.classList.add("fade-out");
+            setTimeout(function() { loadingBar.style.display = "none"; }, 600);
+        }, 400);
+        var bridge = new UnityBridge(WS_SERVER_URL, "unityInstance", {
+            reconnectInterval: 1000,
+            maxReconnectInterval: 30000,
+            maxReconnectAttempts: 0,
+            gameObjectName: "WaterWallBridge"
+        });
+        bridge.onConnected(function() { statusDot.classList.add("connected"); statusText.textContent = "已连接"; });
+        bridge.onDisconnected(function() { statusDot.classList.remove("connected"); statusText.textContent = "已断开"; });
+        bridge.onStateChange(function(data) { console.log("[页面] 状态变更:", data.state, data.detail); });
+        bridge.onChartData(function(data) { console.log("[页面] 图表数据:", data.chartType); });
+        bridge.connect();
+    }).catch(function(message) { alert("Unity WebGL 加载失败:\n" + message); });
+</script>
+</body>
+</html>

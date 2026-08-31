@@ -1,0 +1,151 @@
+# ==============================
+# Secrets / Environment Variables
+# ==============================
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# 证书 / 私钥（无论公开私密，永不入库）
+*.pem
+*.key
+*.p12
+*.pfx
+*.p8
+id_rsa
+id_ed25519
+id_ecdsa
+
+
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.egg-info/
+.eggs/
+
+.venv/
+.venv311/
+venv/
+env/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+
+# ==============================
+# Frontend / Node.js
+# ==============================
+node_modules/
+
+dist/
+build/
+
+.vite/
+.next/
+.nuxt/
+
+coverage/
+
+# First-batch experiment model binaries are local reproducibility artifacts.
+# Commit contracts, manifests, metrics and reports; keep large weights local.
+outputs/first_batch/model_runs/*/models/
+
+# Public-source repository excludes: raw industrial data, literature corpus,
+# generated experiment outputs, model binaries, and prebuilt Unity payloads.
+resources/data/
+resources/datasets/
+resources/local_rag/input/
+resources/local_rag/artifacts/
+resources/local_rag/audit/
+resources/models/**/torch_*.pth
+outputs/
+tmp/
+UnityWebgl/Build/
+
+# Legacy source documents consolidated into public documentation.
+/HANDOFF_README.md
+/README_HANDOFF.md
+/实验日志_全量_20260816.md
+/docs/BM-SEED-02_多Seed复验审计报告.md
+/docs/BM-REGIME-01_多Seed工况分层审计报告.md
+/docs/BM-TIME-01_跨时间块复验报告.md
+
+# Generated local validation, smoke-run, diagram and delivery artifacts.
+# Keep source task definitions and committed scientific summaries, but do not
+# publish reproducible packages, temporary model files or acceptance copies.
+outputs/delivery/
+outputs/delivery_acceptance/
+outputs/diagrams/
+outputs/repair_smoke/
+outputs/teammate/
+outputs/teammate_package_check/
+
+
+# ==============================
+# IDE / Editor
+# ==============================
+.vscode/
+.idea/
+
+*.swp
+*.swo
+
+
+# ==============================
+# Operating System
+# ==============================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+# ==============================
+# Claude Code
+# ==============================
+# 本地个人设置（可能含密钥、权限记录）——永不入库。
+# 团队共享的 .claude/settings.json / commands/ / skills/ / agents/ 保持跟踪。
+.claude/settings.local.json
+
+
+# ==============================
+# Local Runtime / Smoke Artifacts
+# ==============================
+knowledge_graph/kg_snapshot.json
+
+runtime/cache/
+runtime/tmp/
+runtime/research_runs_v2/
+runtime/research_runs/
+runtime/control/
+runtime/*.log
+runtime/*.console.log
+
+# Generated experiment and research-cycle runtime artifacts.
+# Files already tracked by Git remain tracked; these rules only prevent new
+# local runs from adding further untracked artifacts.
+outputs/experiments/
+outputs/experiments_v1/
+runtime/pipeline_runs/
+runtime/research_runs_v1/
+runtime/hypothesis_library/
+runtime/experiment_memory/*.sqlite3
+runtime/experiment_memory/*.jsonl
+runtime/experiment_memory/*.json
+
+smoke_scientific_result.py
+smoke_unity_push.py
+
+# 31V direct soft-sensing 训练产物（大文件，仅留本地）
+# ==============================
+runtime/31v_data/
+runtime/experiment_artifacts/
+runtime/pytest_tmp/
+model_library/weights/
+model_library/predictions/

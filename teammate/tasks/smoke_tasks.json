@@ -1,0 +1,24 @@
+{
+  "schema_version": "boilermind.teammate_tasks.v1",
+  "runner_version": "BM-RUNNER-0.2.0",
+  "dataset_relative_path": "resources/data/shortperiod_new.csv",
+  "dataset_sha256": "d52c1399b844165f94fc156fc7919be9fbb0bf214dfff74b5c48bf429917759e",
+  "tasks": [
+    {
+      "task_id": "BM-SMOKE-02-RIDGE-S42",
+      "model": "ridge",
+      "seed": 42,
+      "max_epochs": 1,
+      "timeout_seconds": 60,
+      "execution_authorization": "SMOKE_APPROVED"
+    },
+    {
+      "task_id": "BM-SMOKE-02-DLINEAR-S42",
+      "model": "dlinear",
+      "seed": 42,
+      "max_epochs": 3,
+      "timeout_seconds": 120,
+      "execution_authorization": "SMOKE_APPROVED"
+    }
+  ]
+}

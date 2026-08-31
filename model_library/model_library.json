@@ -1,0 +1,1059 @@
+{
+  "library_version": "1.2.0",
+  "scope": "31特征→蒸汽体积流量V(m³/s)直接软测量；window=20；前视 h40/h80；切分70/10/20时序，train-only缩放，validation选模，locked_test评估",
+  "count": 28,
+  "collections": [
+    "31v_direct"
+  ],
+  "deployment_recommendation": {
+    "note": "31V direct 软测量库；切分70/10/20，validation选模，locked_test评估",
+    "weights_storage": "618MB 权重未入 git（rf joblib 185MB 超 GitHub 100MB 上限）。位置：服务器 /root/31v_train/model_library/weights/ 与本地仓库 model_library/weights/（已 gitignore）；脚本可随时重训",
+    "sklearn_version_lock": "sklearn joblib 权重在 scikit-learn 1.7.2 环境训练，跨版本加载需匹配环境或重训；torch .pth 版本无关"
+  },
+  "models": [
+    {
+      "id": "persistence_h40",
+      "name": "persistence (31V direct h40)",
+      "family": "统计基线",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": false,
+        "dir": null,
+        "weight_file": null,
+        "scaler": null
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.10797031654880844,
+          "rmse_m3_s": 0.1471784658365981,
+          "r2": -0.4290984224882324,
+          "mbe_m3_s": 0.0025035315922028963
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1857305864243483,
+          "rmse_m3_s": 0.23780285421446234,
+          "r2": -0.5659931350187488,
+          "mbe_m3_s": -0.002639803962332934
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "ridge_h40",
+      "name": "ridge (31V direct h40)",
+      "family": "线性",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/ridge",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.07018957885950589,
+          "rmse_m3_s": 0.09412650636396838,
+          "r2": 0.4154825570915287,
+          "mbe_m3_s": -0.0013449925186895815
+        },
+        "locked_test": {
+          "mae_m3_s": 0.13995679138149308,
+          "rmse_m3_s": 0.17693196553040882,
+          "r2": 0.13310133878956543,
+          "mbe_m3_s": -0.0655057869292964
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "bayesianridge_h40",
+      "name": "bayesianridge (31V direct h40)",
+      "family": "线性",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/bayesianridge",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.06999617788883242,
+          "rmse_m3_s": 0.0940899827685662,
+          "r2": 0.4159360858048836,
+          "mbe_m3_s": -0.00109708826989118
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1405494586760065,
+          "rmse_m3_s": 0.17757300720425312,
+          "r2": 0.12680824327590345,
+          "mbe_m3_s": -0.06611372267870523
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "elasticnet_h40",
+      "name": "elasticnet (31V direct h40)",
+      "family": "线性",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/elasticnet",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.08784063532840361,
+          "rmse_m3_s": 0.1246327126951781,
+          "r2": -0.024796638447172503,
+          "mbe_m3_s": 0.030467506255350146
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1549892012052737,
+          "rmse_m3_s": 0.19738087423948641,
+          "r2": -0.07886192045075147,
+          "mbe_m3_s": 0.061486982935517735
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "pls_h40",
+      "name": "pls (31V direct h40)",
+      "family": "化学计量学",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/pls",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.08104615770786988,
+          "rmse_m3_s": 0.10393348270798562,
+          "r2": 0.28733643298667333,
+          "mbe_m3_s": 0.0012116435218694427
+        },
+        "locked_test": {
+          "mae_m3_s": 0.136529507940883,
+          "rmse_m3_s": 0.17538291992148547,
+          "r2": 0.14821434725914562,
+          "mbe_m3_s": -0.029718088820399707
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "svr_h40",
+      "name": "svr (31V direct h40)",
+      "family": "核方法",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/svr",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.03978117749132532,
+          "rmse_m3_s": 0.051681526812106644,
+          "r2": 0.8237844346991531,
+          "mbe_m3_s": -5.682542455287181e-05
+        },
+        "locked_test": {
+          "mae_m3_s": 0.2505726133406853,
+          "rmse_m3_s": 0.3476739632495455,
+          "r2": -2.347341829290573,
+          "mbe_m3_s": -0.044342472518919394
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "rf_h40",
+      "name": "rf (31V direct h40)",
+      "family": "树集成",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/rf",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.009762895671134463,
+          "rmse_m3_s": 0.013152920456954195,
+          "r2": 0.9885865225783358,
+          "mbe_m3_s": -0.00027097898049387647
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1485307369462783,
+          "rmse_m3_s": 0.1918803653832174,
+          "r2": -0.019569421077431093,
+          "mbe_m3_s": 0.007780942021467061
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "mlp_h40",
+      "name": "mlp (31V direct h40)",
+      "family": "神经网络",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/mlp",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.06699042958103453,
+          "rmse_m3_s": 0.08797434708951668,
+          "r2": 0.489394249766847,
+          "mbe_m3_s": -0.022370749929947552
+        },
+        "locked_test": {
+          "mae_m3_s": 0.26434533898998824,
+          "rmse_m3_s": 0.4231127776355357,
+          "r2": -3.9575603502709544,
+          "mbe_m3_s": -0.09158267801698527
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "knn_h40",
+      "name": "knn (31V direct h40)",
+      "family": "非参数",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/knn",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.030186325021222874,
+          "rmse_m3_s": 0.049028156755505516,
+          "r2": 0.8414140425407859,
+          "mbe_m3_s": -9.678117843422952e-05
+        },
+        "locked_test": {
+          "mae_m3_s": 0.17956342713524034,
+          "rmse_m3_s": 0.23796468331512563,
+          "r2": -0.5681252329791022,
+          "mbe_m3_s": 0.02719441075852247
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "hgb_h40",
+      "name": "hgb (31V direct h40)",
+      "family": "树集成",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/hgb",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.026186124621436747,
+          "rmse_m3_s": 0.03408384111961392,
+          "r2": 0.9233573237942205,
+          "mbe_m3_s": 5.259570606557798e-05
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1457972245702587,
+          "rmse_m3_s": 0.18678327972311154,
+          "r2": 0.033878555882348005,
+          "mbe_m3_s": -0.01621733654637302
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "transformer_h40",
+      "name": "transformer (31V direct h40)",
+      "family": "Transformer",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/transformer",
+        "weight_file": "model.pth",
+        "scaler": "target_scaler.json"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.0776593054189813,
+          "rmse_m3_s": 0.10710743537561512,
+          "r2": 0.24314473284291238,
+          "mbe_m3_s": 0.007803701202424369
+        },
+        "locked_test": {
+          "mae_m3_s": 0.14905928280877495,
+          "rmse_m3_s": 0.19239132682888255,
+          "r2": -0.025006708021906965,
+          "mbe_m3_s": -0.014478421756246482
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "lstm_h40",
+      "name": "lstm (31V direct h40)",
+      "family": "循环神经网络",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/lstm",
+        "weight_file": "model.pth",
+        "scaler": "target_scaler.json"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.08761961596854376,
+          "rmse_m3_s": 0.11801416441118835,
+          "r2": 0.08115582150180489,
+          "mbe_m3_s": 0.0331674661777362
+        },
+        "locked_test": {
+          "mae_m3_s": 0.14279758266036324,
+          "rmse_m3_s": 0.18543909865341193,
+          "r2": 0.04773385744563163,
+          "mbe_m3_s": 0.01640388152717191
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "dlinear_h40",
+      "name": "dlinear (31V direct h40)",
+      "family": "线性/时序",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/dlinear",
+        "weight_file": "model.pth",
+        "scaler": "target_scaler.json"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.0943717509674233,
+          "rmse_m3_s": 0.11963866587473485,
+          "r2": 0.055685367018451504,
+          "mbe_m3_s": -0.038513194665638795
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1528619093850273,
+          "rmse_m3_s": 0.19758381445026987,
+          "r2": -0.08108155821416241,
+          "mbe_m3_s": -0.048526428115445414
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "gru_h40",
+      "name": "gru (31V direct h40)",
+      "family": "循环神经网络",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 40,
+        "horizon_minutes": 10,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h40/gru",
+        "weight_file": "model.pth",
+        "scaler": "target_scaler.json"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.07976686396682485,
+          "rmse_m3_s": 0.10749824855113285,
+          "r2": 0.23761143543557395,
+          "mbe_m3_s": 0.0041726460844432175
+        },
+        "locked_test": {
+          "mae_m3_s": 0.14092834506755014,
+          "rmse_m3_s": 0.18425516065976763,
+          "r2": 0.059854548806075214,
+          "mbe_m3_s": 0.011345523939543382
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "persistence_h80",
+      "name": "persistence (31V direct h80)",
+      "family": "统计基线",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": false,
+        "dir": null,
+        "weight_file": null,
+        "scaler": null
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.12554718938214485,
+          "rmse_m3_s": 0.17486458753718415,
+          "r2": -0.9607939809635777,
+          "mbe_m3_s": 0.0051554642332214485
+        },
+        "locked_test": {
+          "mae_m3_s": 0.23763134484880383,
+          "rmse_m3_s": 0.302816009357926,
+          "r2": -1.5487359940313987,
+          "mbe_m3_s": -0.004978977993806436
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "ridge_h80",
+      "name": "ridge (31V direct h80)",
+      "family": "线性",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/ridge",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.08213083179617774,
+          "rmse_m3_s": 0.10519321478751543,
+          "r2": 0.2904162115128297,
+          "mbe_m3_s": -0.007103421172790439
+        },
+        "locked_test": {
+          "mae_m3_s": 0.14291207855378557,
+          "rmse_m3_s": 0.1830443590661886,
+          "r2": 0.06872083282658736,
+          "mbe_m3_s": -0.05777701018113618
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "bayesianridge_h80",
+      "name": "bayesianridge (31V direct h80)",
+      "family": "线性",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/bayesianridge",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.08196433684222838,
+          "rmse_m3_s": 0.1050060551966328,
+          "r2": 0.2929389458590662,
+          "mbe_m3_s": -0.008654978743930898
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1450274767570344,
+          "rmse_m3_s": 0.18509155436649719,
+          "r2": 0.04777321453914518,
+          "mbe_m3_s": -0.06404186575111377
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "elasticnet_h80",
+      "name": "elasticnet (31V direct h80)",
+      "family": "线性",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/elasticnet",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.08081553573822566,
+          "rmse_m3_s": 0.10658697727227026,
+          "r2": 0.27148831564981935,
+          "mbe_m3_s": 0.005384687454890306
+        },
+        "locked_test": {
+          "mae_m3_s": 0.13467244719208787,
+          "rmse_m3_s": 0.17575730012006793,
+          "r2": 0.14139397092066852,
+          "mbe_m3_s": -0.022024416651590405
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "pls_h80",
+      "name": "pls (31V direct h80)",
+      "family": "化学计量学",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/pls",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.08087043762817012,
+          "rmse_m3_s": 0.10541589055653879,
+          "r2": 0.28740890057703283,
+          "mbe_m3_s": 0.0005119223944646493
+        },
+        "locked_test": {
+          "mae_m3_s": 0.13872530144674552,
+          "rmse_m3_s": 0.17973835972020788,
+          "r2": 0.10205706737449405,
+          "mbe_m3_s": -0.0381544878191266
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "svr_h80",
+      "name": "svr (31V direct h80)",
+      "family": "核方法",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/svr",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.04201664014870843,
+          "rmse_m3_s": 0.057372345934157465,
+          "r2": 0.7889266289978731,
+          "mbe_m3_s": 0.0027398268035012676
+        },
+        "locked_test": {
+          "mae_m3_s": 0.23690731934320272,
+          "rmse_m3_s": 0.31920669303834265,
+          "r2": -1.832116840574535,
+          "mbe_m3_s": 0.0316521896971267
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "rf_h80",
+      "name": "rf (31V direct h80)",
+      "family": "树集成",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/rf",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.009612761617268636,
+          "rmse_m3_s": 0.012648285877169254,
+          "r2": 0.9897413178183719,
+          "mbe_m3_s": 0.0003549801798638132
+        },
+        "locked_test": {
+          "mae_m3_s": 0.149274136041483,
+          "rmse_m3_s": 0.19332936919274668,
+          "r2": -0.038873949994662205,
+          "mbe_m3_s": 0.04052032000233315
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "mlp_h80",
+      "name": "mlp (31V direct h80)",
+      "family": "神经网络",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/mlp",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.07173495754179261,
+          "rmse_m3_s": 0.09254085023856225,
+          "r2": 0.450844673788079,
+          "mbe_m3_s": -0.010437981004863364
+        },
+        "locked_test": {
+          "mae_m3_s": 0.17341865204909543,
+          "rmse_m3_s": 0.23274124291372394,
+          "r2": -0.5056148413616348,
+          "mbe_m3_s": -0.06097831473663029
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "knn_h80",
+      "name": "knn (31V direct h80)",
+      "family": "非参数",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/knn",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.03234556839155531,
+          "rmse_m3_s": 0.052758128910025195,
+          "r2": 0.8215128319748359,
+          "mbe_m3_s": -0.0017027618275837352
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1786260563127536,
+          "rmse_m3_s": 0.22755984018492512,
+          "r2": -0.4393235415041983,
+          "mbe_m3_s": 0.045277714669577314
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "hgb_h80",
+      "name": "hgb (31V direct h80)",
+      "family": "树集成",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/hgb",
+        "weight_file": "model.joblib",
+        "scaler": "scaler.joblib"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.026940817822470903,
+          "rmse_m3_s": 0.0348940271709122,
+          "r2": 0.9219216873464064,
+          "mbe_m3_s": 0.00022385876510459284
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1444544504331733,
+          "rmse_m3_s": 0.1908434400115016,
+          "r2": -0.012328960104855957,
+          "mbe_m3_s": 0.015652405684777337
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "transformer_h80",
+      "name": "transformer (31V direct h80)",
+      "family": "Transformer",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/transformer",
+        "weight_file": "model.pth",
+        "scaler": "target_scaler.json"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.09110140512594643,
+          "rmse_m3_s": 0.12225093410516127,
+          "r2": 0.041631343088070705,
+          "mbe_m3_s": 0.008391681113595296
+        },
+        "locked_test": {
+          "mae_m3_s": 0.14076463703038627,
+          "rmse_m3_s": 0.18215293883820655,
+          "r2": 0.07776934612300657,
+          "mbe_m3_s": 0.008102762876038805
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "lstm_h80",
+      "name": "lstm (31V direct h80)",
+      "family": "循环神经网络",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/lstm",
+        "weight_file": "model.pth",
+        "scaler": "target_scaler.json"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.08828008186277078,
+          "rmse_m3_s": 0.114566545225763,
+          "r2": 0.15832609323203983,
+          "mbe_m3_s": -0.0020063455579472883
+        },
+        "locked_test": {
+          "mae_m3_s": 0.14567165266445958,
+          "rmse_m3_s": 0.18996698902501183,
+          "r2": -0.003052043416861272,
+          "mbe_m3_s": -0.034751119312351815
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "dlinear_h80",
+      "name": "dlinear (31V direct h80)",
+      "family": "线性/时序",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/dlinear",
+        "weight_file": "model.pth",
+        "scaler": "target_scaler.json"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.09354306950554864,
+          "rmse_m3_s": 0.12378868417923991,
+          "r2": 0.01736976586022787,
+          "mbe_m3_s": -0.022973383207215935
+        },
+        "locked_test": {
+          "mae_m3_s": 0.15050338336783417,
+          "rmse_m3_s": 0.19541716759364555,
+          "r2": -0.061433076634707096,
+          "mbe_m3_s": -0.04164643808806812
+        }
+      },
+      "status": "benchmark_active"
+    },
+    {
+      "id": "gru_h80",
+      "name": "gru (31V direct h80)",
+      "family": "循环神经网络",
+      "collection": "31v_direct",
+      "task": {
+        "input_dim": 31,
+        "window_steps": 20,
+        "horizon_steps": 80,
+        "horizon_minutes": 20,
+        "target": "V (m³/s)",
+        "target_type": "V (m³/s)",
+        "feature_scheme": "31 SOFT_SENSOR_FEATURES (1-based)",
+        "note": "31特征→V直接软测量；前视随模型记录"
+      },
+      "weights": {
+        "exists": true,
+        "dir": "weights/31v_direct/h80/gru",
+        "weight_file": "model.pth",
+        "scaler": "target_scaler.json"
+      },
+      "metrics": {
+        "validation": {
+          "mae_m3_s": 0.09921507961821538,
+          "rmse_m3_s": 0.12734224033210487,
+          "r2": -0.039855999181546586,
+          "mbe_m3_s": -0.00783015525005654
+        },
+        "locked_test": {
+          "mae_m3_s": 0.1479909759877436,
+          "rmse_m3_s": 0.1883864148415411,
+          "r2": 0.013569820333908855,
+          "mbe_m3_s": 0.021974604504198143
+        }
+      },
+      "status": "benchmark_active"
+    }
+  ],
+  "dependency_versions": {
+    "python": "3.10.12",
+    "scikit-learn": "1.7.2",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.7.1+cu128",
+    "data": "boiler_181var_clean.csv sha256 9c099b793c6d"
+  }
+}

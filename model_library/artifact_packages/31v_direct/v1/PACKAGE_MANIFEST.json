@@ -1,0 +1,19 @@
+{
+  "package": "BoilerMind-31V-Artifacts-v1",
+  "schema_version": "boilermind.31v_artifacts.package.v1",
+  "created_utc": "2026-08-21T10:57:22.753591+00:00",
+  "dataset_sha256": "9c099b793c6d63edaeb6b3514415e5ba209eb2bf6ac5c940743485eebd56891c",
+  "protocol_sha256_h40": "15e21863b9b070586207b8bf578991c96c0c3360f9eff381304922c431879c09",
+  "protocol_sha256_h80": "0d20e9495a31ebbf893008e3e0379b10e98f391c145af4428605d189a566188f",
+  "git_commit": "ed08315",
+  "environment": "server 8.153.173.249 (Tesla T4, python3.10.12, sklearn1.7.2, torch2.7.1+cu128)",
+  "top_level_files": "SHA256SUMS.json（全部文件）+ model_library/SHA256SUMS.json（训练产物）",
+  "audit_notes": "fit_converged/warnings 为推断值（见各模型日志 convergence_note）：28/28 fit_success，elasticnet max_iter=5000、mlp early_stopping=True，无收敛失败；warning 捕获未 instrument。如需要独立验证收敛状态可重跑。",
+  "contents": {
+    "model_library": "json(28条) + weights(26模型×2前视) + predictions(56个CSV) + manifests + logs + SHA256SUMS",
+    "environment": "python/pip_freeze/torch/hardware",
+    "runtime/31v_data": "npz缓存 + feature scaler + dataset_manifest",
+    "data": "原始数据 boiler_181var_clean.csv (供重建)",
+    "scripts": "5个可复现脚本"
+  }
+}

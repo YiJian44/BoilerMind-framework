@@ -1,0 +1,10 @@
+{
+  "schema_version": "boilermind.teammate_tasks.v1",
+  "runner_version": "BM-RUNNER-0.2.0",
+  "dataset_relative_path": "resources/data/shortperiod_new.csv",
+  "dataset_sha256": "d52c1399b844165f94fc156fc7919be9fbb0bf214dfff74b5c48bf429917759e",
+  "execution_authorization": "FORMAL_HOLD",
+  "note": "仅用于展示后续任务结构。收到负责人解除 HOLD 的新任务文件前禁止运行 BM-SEED-02。",
+  "planned_seeds": [7, 19, 42],
+  "planned_models": ["ridge", "bayesianridge", "DYNAMIC_BEST_REPAIRED_TORCH", "DYNAMIC_TREE_MODEL", "persistence"]
+}

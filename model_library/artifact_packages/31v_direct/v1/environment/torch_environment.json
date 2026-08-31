@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "deterministic_algorithms": false,
+  "torch_version": "2.7.1+cu128",
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "cudnn_version": 90701,
+  "device_name": "Tesla T4",
+  "gpu_count": 1,
+  "seed_notes": "torch.manual_seed(seed) and np.random.seed(seed) set in TorchSensor.fit"
+}

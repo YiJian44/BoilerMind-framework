@@ -1,0 +1,1349 @@
+{
+  "persistence": {
+    "model": "persistence",
+    "horizon_steps": 80,
+    "kind": "heuristic",
+    "started_at": "2026-08-21T10:23:12.233113+00:00",
+    "fit_success": true,
+    "validation": {
+      "mae_m3_s": 0.12554718938214485,
+      "rmse_m3_s": 0.17486458753718415,
+      "r2": -0.9607939809635777,
+      "mbe_m3_s": 0.0051554642332214485
+    },
+    "locked_test": {
+      "mae_m3_s": 0.23763134484880383,
+      "rmse_m3_s": 0.302816009357926,
+      "r2": -1.5487359940313987,
+      "mbe_m3_s": -0.004978977993806436
+    },
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/persistence_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/persistence_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 0.124,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "ridge": {
+    "model": "ridge",
+    "horizon_steps": 80,
+    "kind": "sklearn",
+    "started_at": "2026-08-21T10:23:12.354451+00:00",
+    "fit_success": true,
+    "candidates": [
+      {
+        "params": {
+          "alpha": 0.01
+        },
+        "validation_mae_m3_s": 0.42768162807658816
+      },
+      {
+        "params": {
+          "alpha": 0.1
+        },
+        "validation_mae_m3_s": 0.3763176858647056
+      },
+      {
+        "params": {
+          "alpha": 1.0
+        },
+        "validation_mae_m3_s": 0.2848701693982479
+      },
+      {
+        "params": {
+          "alpha": 10.0
+        },
+        "validation_mae_m3_s": 0.19110386677260335
+      }
+    ],
+    "selected_params": {
+      "alpha": 10.0
+    },
+    "selected_by_validation_mae_m3_s": 0.19110386677260335,
+    "validation": {
+      "mae_m3_s": 0.08213083179617774,
+      "rmse_m3_s": 0.10519321478751543,
+      "r2": 0.2904162115128297,
+      "mbe_m3_s": -0.007103421172790439
+    },
+    "locked_test": {
+      "mae_m3_s": 0.14291207855378557,
+      "rmse_m3_s": 0.1830443590661886,
+      "r2": 0.06872083282658736,
+      "mbe_m3_s": -0.05777701018113618
+    },
+    "weights_dir": "weights/31v_direct/h80/ridge",
+    "weight_file": "model.joblib",
+    "scaler_file": "scaler.joblib",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/ridge_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/ridge_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 1.889,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "bayesianridge": {
+    "model": "bayesianridge",
+    "horizon_steps": 80,
+    "kind": "sklearn",
+    "started_at": "2026-08-21T10:23:14.243212+00:00",
+    "fit_success": true,
+    "candidates": [
+      {
+        "params": {},
+        "validation_mae_m3_s": 0.26969710240041594
+      }
+    ],
+    "selected_params": {},
+    "selected_by_validation_mae_m3_s": 0.26969710240041594,
+    "validation": {
+      "mae_m3_s": 0.08196433684222838,
+      "rmse_m3_s": 0.1050060551966328,
+      "r2": 0.2929389458590662,
+      "mbe_m3_s": -0.008654978743930898
+    },
+    "locked_test": {
+      "mae_m3_s": 0.1450274767570344,
+      "rmse_m3_s": 0.18509155436649719,
+      "r2": 0.04777321453914518,
+      "mbe_m3_s": -0.06404186575111377
+    },
+    "weights_dir": "weights/31v_direct/h80/bayesianridge",
+    "weight_file": "model.joblib",
+    "scaler_file": "scaler.joblib",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/bayesianridge_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/bayesianridge_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 2.62,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "elasticnet": {
+    "model": "elasticnet",
+    "horizon_steps": 80,
+    "kind": "sklearn",
+    "started_at": "2026-08-21T10:23:16.862785+00:00",
+    "fit_success": true,
+    "candidates": [
+      {
+        "params": {
+          "alpha": 0.001,
+          "l1_ratio": 0.5
+        },
+        "validation_mae_m3_s": 0.09078161051016517
+      },
+      {
+        "params": {
+          "alpha": 0.01,
+          "l1_ratio": 0.5
+        },
+        "validation_mae_m3_s": 0.09319872522677387
+      }
+    ],
+    "selected_params": {
+      "alpha": 0.001,
+      "l1_ratio": 0.5
+    },
+    "selected_by_validation_mae_m3_s": 0.09078161051016517,
+    "validation": {
+      "mae_m3_s": 0.08081553573822566,
+      "rmse_m3_s": 0.10658697727227026,
+      "r2": 0.27148831564981935,
+      "mbe_m3_s": 0.005384687454890306
+    },
+    "locked_test": {
+      "mae_m3_s": 0.13467244719208787,
+      "rmse_m3_s": 0.17575730012006793,
+      "r2": 0.14139397092066852,
+      "mbe_m3_s": -0.022024416651590405
+    },
+    "weights_dir": "weights/31v_direct/h80/elasticnet",
+    "weight_file": "model.joblib",
+    "scaler_file": "scaler.joblib",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/elasticnet_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/elasticnet_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 25.409,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "pls": {
+    "model": "pls",
+    "horizon_steps": 80,
+    "kind": "sklearn",
+    "started_at": "2026-08-21T10:23:42.272335+00:00",
+    "fit_success": true,
+    "candidates": [
+      {
+        "params": {
+          "n_components": 8
+        },
+        "validation_mae_m3_s": 0.0989470490428274
+      }
+    ],
+    "selected_params": {
+      "n_components": 8
+    },
+    "selected_by_validation_mae_m3_s": 0.0989470490428274,
+    "validation": {
+      "mae_m3_s": 0.08087043762817012,
+      "rmse_m3_s": 0.10541589055653879,
+      "r2": 0.28740890057703283,
+      "mbe_m3_s": 0.0005119223944646493
+    },
+    "locked_test": {
+      "mae_m3_s": 0.13872530144674552,
+      "rmse_m3_s": 0.17973835972020788,
+      "r2": 0.10205706737449405,
+      "mbe_m3_s": -0.0381544878191266
+    },
+    "weights_dir": "weights/31v_direct/h80/pls",
+    "weight_file": "model.joblib",
+    "scaler_file": "scaler.joblib",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/pls_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/pls_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 2.124,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "svr": {
+    "model": "svr",
+    "horizon_steps": 80,
+    "kind": "sklearn",
+    "started_at": "2026-08-21T10:23:44.403327+00:00",
+    "fit_success": true,
+    "candidates": [
+      {
+        "params": {
+          "C": 10.0,
+          "epsilon": 0.05,
+          "kernel": "rbf"
+        },
+        "validation_mae_m3_s": 0.24332428457332825
+      }
+    ],
+    "selected_params": {
+      "C": 10.0,
+      "epsilon": 0.05,
+      "kernel": "rbf"
+    },
+    "selected_by_validation_mae_m3_s": 0.24332428457332825,
+    "validation": {
+      "mae_m3_s": 0.04201664014870843,
+      "rmse_m3_s": 0.057372345934157465,
+      "r2": 0.7889266289978731,
+      "mbe_m3_s": 0.0027398268035012676
+    },
+    "locked_test": {
+      "mae_m3_s": 0.23690731934320272,
+      "rmse_m3_s": 0.31920669303834265,
+      "r2": -1.832116840574535,
+      "mbe_m3_s": 0.0316521896971267
+    },
+    "weights_dir": "weights/31v_direct/h80/svr",
+    "weight_file": "model.joblib",
+    "scaler_file": "scaler.joblib",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/svr_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/svr_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 83.084,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "rf": {
+    "model": "rf",
+    "horizon_steps": 80,
+    "kind": "sklearn",
+    "started_at": "2026-08-21T10:25:07.486395+00:00",
+    "fit_success": true,
+    "candidates": [
+      {
+        "params": {
+          "n_estimators": 150,
+          "max_depth": 20
+        },
+        "validation_mae_m3_s": 0.12324766990737161
+      }
+    ],
+    "selected_params": {
+      "n_estimators": 150,
+      "max_depth": 20
+    },
+    "selected_by_validation_mae_m3_s": 0.12324766990737161,
+    "validation": {
+      "mae_m3_s": 0.009612761617268635,
+      "rmse_m3_s": 0.012648285877169261,
+      "r2": 0.9897413178183719,
+      "mbe_m3_s": 0.0003549801798638125
+    },
+    "locked_test": {
+      "mae_m3_s": 0.149274136041483,
+      "rmse_m3_s": 0.19332936919274665,
+      "r2": -0.03887394999466198,
+      "mbe_m3_s": 0.04052032000233314
+    },
+    "weights_dir": "weights/31v_direct/h80/rf",
+    "weight_file": "model.joblib",
+    "scaler_file": "scaler.joblib",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/rf_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/rf_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 527.275,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "mlp": {
+    "model": "mlp",
+    "horizon_steps": 80,
+    "kind": "sklearn",
+    "started_at": "2026-08-21T10:33:54.754734+00:00",
+    "fit_success": true,
+    "candidates": [
+      {
+        "params": {
+          "hidden_layer_sizes": [
+            64
+          ],
+          "max_iter": 300
+        },
+        "validation_mae_m3_s": 0.31242263689365946
+      }
+    ],
+    "selected_params": {
+      "hidden_layer_sizes": [
+        64
+      ],
+      "max_iter": 300
+    },
+    "selected_by_validation_mae_m3_s": 0.31242263689365946,
+    "validation": {
+      "mae_m3_s": 0.07173495754179261,
+      "rmse_m3_s": 0.09254085023856225,
+      "r2": 0.450844673788079,
+      "mbe_m3_s": -0.010437981004863364
+    },
+    "locked_test": {
+      "mae_m3_s": 0.17341865204909543,
+      "rmse_m3_s": 0.23274124291372394,
+      "r2": -0.5056148413616348,
+      "mbe_m3_s": -0.06097831473663029
+    },
+    "weights_dir": "weights/31v_direct/h80/mlp",
+    "weight_file": "model.joblib",
+    "scaler_file": "scaler.joblib",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/mlp_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/mlp_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 32.701,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "knn": {
+    "model": "knn",
+    "horizon_steps": 80,
+    "kind": "sklearn",
+    "started_at": "2026-08-21T10:34:27.456339+00:00",
+    "fit_success": true,
+    "candidates": [
+      {
+        "params": {
+          "n_neighbors": 5
+        },
+        "validation_mae_m3_s": 0.16206732212926966
+      }
+    ],
+    "selected_params": {
+      "n_neighbors": 5
+    },
+    "selected_by_validation_mae_m3_s": 0.16206732212926966,
+    "validation": {
+      "mae_m3_s": 0.03234556839155531,
+      "rmse_m3_s": 0.052758128910025195,
+      "r2": 0.8215128319748359,
+      "mbe_m3_s": -0.0017027618275837352
+    },
+    "locked_test": {
+      "mae_m3_s": 0.1786260563127536,
+      "rmse_m3_s": 0.22755984018492512,
+      "r2": -0.4393235415041983,
+      "mbe_m3_s": 0.045277714669577314
+    },
+    "weights_dir": "weights/31v_direct/h80/knn",
+    "weight_file": "model.joblib",
+    "scaler_file": "scaler.joblib",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/knn_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/knn_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 2.026,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "hgb": {
+    "model": "hgb",
+    "horizon_steps": 80,
+    "kind": "sklearn",
+    "started_at": "2026-08-21T10:34:29.481685+00:00",
+    "fit_success": true,
+    "candidates": [
+      {
+        "params": {
+          "learning_rate": 0.05,
+          "max_iter": 150,
+          "max_leaf_nodes": 31
+        },
+        "validation_mae_m3_s": 0.12452974438286851
+      },
+      {
+        "params": {
+          "learning_rate": 0.1,
+          "max_iter": 150,
+          "max_leaf_nodes": 31
+        },
+        "validation_mae_m3_s": 0.10765047171366827
+      }
+    ],
+    "selected_params": {
+      "learning_rate": 0.1,
+      "max_iter": 150,
+      "max_leaf_nodes": 31
+    },
+    "selected_by_validation_mae_m3_s": 0.10765047171366827,
+    "validation": {
+      "mae_m3_s": 0.026940817822470903,
+      "rmse_m3_s": 0.0348940271709122,
+      "r2": 0.9219216873464064,
+      "mbe_m3_s": 0.00022385876510459284
+    },
+    "locked_test": {
+      "mae_m3_s": 0.1444544504331733,
+      "rmse_m3_s": 0.1908434400115016,
+      "r2": -0.012328960104855957,
+      "mbe_m3_s": 0.015652405684777337
+    },
+    "weights_dir": "weights/31v_direct/h80/hgb",
+    "weight_file": "model.joblib",
+    "scaler_file": "scaler.joblib",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/hgb_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/hgb_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 18.56,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "transformer": {
+    "model": "transformer",
+    "horizon_steps": 80,
+    "kind": "torch",
+    "started_at": "2026-08-21T10:34:48.048465+00:00",
+    "fit_success": true,
+    "epochs_completed": 35,
+    "best_epoch": 19,
+    "best_validation_loss": 0.5782479643821716,
+    "training_history": [
+      {
+        "epoch": 0,
+        "train_loss": 1.027539615545954,
+        "validation_loss": 0.7952265739440918
+      },
+      {
+        "epoch": 1,
+        "train_loss": 1.0281414717435837,
+        "validation_loss": 0.8134397864341736
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.1050105499369758,
+        "validation_loss": 0.7862132787704468
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.149403475863593,
+        "validation_loss": 0.6786077618598938
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.1742159758295332,
+        "validation_loss": 0.5962170958518982
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.1250118657946586,
+        "validation_loss": 0.6481636762619019
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.0563588778887476,
+        "validation_loss": 0.6528526544570923
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.0424958727189473,
+        "validation_loss": 0.6480947136878967
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.034573381287711,
+        "validation_loss": 0.6797497272491455
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.0174729164157594,
+        "validation_loss": 0.7186857461929321
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.003900890478066,
+        "validation_loss": 0.7305378913879395
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.9835593519466264,
+        "validation_loss": 0.768031120300293
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.9414882740804127,
+        "validation_loss": 0.7336317896842957
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.9245704493352345,
+        "validation_loss": 0.7169021964073181
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.8718753976481302,
+        "validation_loss": 0.6427180767059326
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.8376371475202696,
+        "validation_loss": 0.6171571016311646
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.8978048622608185,
+        "validation_loss": 0.8117219805717468
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.8934801067624774,
+        "validation_loss": 0.6852588057518005
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.82330081228699,
+        "validation_loss": 0.6150596737861633
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.9109528401068279,
+        "validation_loss": 0.5782479643821716
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.947640680202416,
+        "validation_loss": 0.8299911618232727
+      },
+      {
+        "epoch": 21,
+        "train_loss": 0.8310925251671246,
+        "validation_loss": 0.8977312445640564
+      },
+      {
+        "epoch": 22,
+        "train_loss": 0.84254407116345,
+        "validation_loss": 0.6198316216468811
+      },
+      {
+        "epoch": 23,
+        "train_loss": 0.8192227861710957,
+        "validation_loss": 1.0160365104675293
+      },
+      {
+        "epoch": 24,
+        "train_loss": 0.7827297412923404,
+        "validation_loss": 0.7765744924545288
+      },
+      {
+        "epoch": 25,
+        "train_loss": 0.8024019043360437,
+        "validation_loss": 0.6833394765853882
+      },
+      {
+        "epoch": 26,
+        "train_loss": 0.8126528686710767,
+        "validation_loss": 0.9880653023719788
+      },
+      {
+        "epoch": 27,
+        "train_loss": 0.812653589461531,
+        "validation_loss": 0.6231135129928589
+      },
+      {
+        "epoch": 28,
+        "train_loss": 0.7845938154629298,
+        "validation_loss": 1.2685455083847046
+      },
+      {
+        "epoch": 29,
+        "train_loss": 0.8225467281682151,
+        "validation_loss": 0.7148669362068176
+      },
+      {
+        "epoch": 30,
+        "train_loss": 0.7584798133799008,
+        "validation_loss": 0.8972867727279663
+      },
+      {
+        "epoch": 31,
+        "train_loss": 0.7309504387634141,
+        "validation_loss": 0.8324684500694275
+      },
+      {
+        "epoch": 32,
+        "train_loss": 0.7365103325673512,
+        "validation_loss": 0.8211811780929565
+      },
+      {
+        "epoch": 33,
+        "train_loss": 0.7324471757880279,
+        "validation_loss": 0.7694534659385681
+      },
+      {
+        "epoch": 34,
+        "train_loss": 0.7813223915440696,
+        "validation_loss": 0.950228214263916
+      }
+    ],
+    "validation": {
+      "mae_m3_s": 0.09110140512594643,
+      "rmse_m3_s": 0.12225093410516127,
+      "r2": 0.041631343088070705,
+      "mbe_m3_s": 0.008391681113595296
+    },
+    "locked_test": {
+      "mae_m3_s": 0.14076463703038627,
+      "rmse_m3_s": 0.18215293883820655,
+      "r2": 0.07776934612300657,
+      "mbe_m3_s": 0.008102762876038805
+    },
+    "weights_dir": "weights/31v_direct/h80/transformer",
+    "weight_file": "model.pth",
+    "scaler_file": "target_scaler.json",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/transformer_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/transformer_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 17.016,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "lstm": {
+    "model": "lstm",
+    "horizon_steps": 80,
+    "kind": "torch",
+    "started_at": "2026-08-21T10:35:05.057771+00:00",
+    "fit_success": true,
+    "epochs_completed": 83,
+    "best_epoch": 67,
+    "best_validation_loss": 0.5078381896018982,
+    "training_history": [
+      {
+        "epoch": 0,
+        "train_loss": 1.0153072144304003,
+        "validation_loss": 0.6806361675262451
+      },
+      {
+        "epoch": 1,
+        "train_loss": 0.9935148609536034,
+        "validation_loss": 0.6804120540618896
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.9891814574599266,
+        "validation_loss": 0.682110071182251
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.9862146871430534,
+        "validation_loss": 0.6792195439338684
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.9816707983613014,
+        "validation_loss": 0.67616868019104
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.9730232164263726,
+        "validation_loss": 0.6790302991867065
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.9689648044960839,
+        "validation_loss": 0.7973428964614868
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.9580635390111378,
+        "validation_loss": 0.8895649909973145
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.9198528736829757,
+        "validation_loss": 0.8251408338546753
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.8972861100520406,
+        "validation_loss": 1.0505558252334595
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.8889775699802808,
+        "validation_loss": 0.6923138499259949
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.8577476522752217,
+        "validation_loss": 0.8392330408096313
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.8378027151737895,
+        "validation_loss": 0.9952142834663391
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.8382095358201436,
+        "validation_loss": 0.6928142309188843
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.7942579099110194,
+        "validation_loss": 0.77825528383255
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.7562994895236833,
+        "validation_loss": 0.7600817084312439
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.7588372202856201,
+        "validation_loss": 0.6490250825881958
+      },
+      {
+        "epoch": 17,
+        "train_loss": 0.7602619384016309,
+        "validation_loss": 0.8093410730361938
+      },
+      {
+        "epoch": 18,
+        "train_loss": 0.7879701312099184,
+        "validation_loss": 0.6886199712753296
+      },
+      {
+        "epoch": 19,
+        "train_loss": 0.7523393328700747,
+        "validation_loss": 0.8116137981414795
+      },
+      {
+        "epoch": 20,
+        "train_loss": 0.7341571086219378,
+        "validation_loss": 0.787581741809845
+      },
+      {
+        "epoch": 21,
+        "train_loss": 0.7442122561591012,
+        "validation_loss": 0.6528199911117554
+      },
+      {
+        "epoch": 22,
+        "train_loss": 0.740461520424911,
+        "validation_loss": 0.7224114537239075
+      },
+      {
+        "epoch": 23,
+        "train_loss": 0.7029638416000775,
+        "validation_loss": 0.7692486643791199
+      },
+      {
+        "epoch": 24,
+        "train_loss": 0.6995710667754923,
+        "validation_loss": 0.780134379863739
+      },
+      {
+        "epoch": 25,
+        "train_loss": 0.7013393067887851,
+        "validation_loss": 0.7641050815582275
+      },
+      {
+        "epoch": 26,
+        "train_loss": 0.6977309117359775,
+        "validation_loss": 0.7636839747428894
+      },
+      {
+        "epoch": 27,
+        "train_loss": 0.7046048565634659,
+        "validation_loss": 0.740152895450592
+      },
+      {
+        "epoch": 28,
+        "train_loss": 0.7133557311126164,
+        "validation_loss": 0.7191900014877319
+      },
+      {
+        "epoch": 29,
+        "train_loss": 0.6866668060421943,
+        "validation_loss": 0.6770681738853455
+      },
+      {
+        "epoch": 30,
+        "train_loss": 0.672395916815315,
+        "validation_loss": 0.6217831373214722
+      },
+      {
+        "epoch": 31,
+        "train_loss": 0.6738464809954167,
+        "validation_loss": 0.6538806557655334
+      },
+      {
+        "epoch": 32,
+        "train_loss": 0.6843680139098849,
+        "validation_loss": 0.707853376865387
+      },
+      {
+        "epoch": 33,
+        "train_loss": 0.6797831062759672,
+        "validation_loss": 0.771145761013031
+      },
+      {
+        "epoch": 34,
+        "train_loss": 0.6693152206284659,
+        "validation_loss": 0.6318762898445129
+      },
+      {
+        "epoch": 35,
+        "train_loss": 0.6713350400328636,
+        "validation_loss": 0.6129077672958374
+      },
+      {
+        "epoch": 36,
+        "train_loss": 0.6623519533446857,
+        "validation_loss": 0.6674780249595642
+      },
+      {
+        "epoch": 37,
+        "train_loss": 0.6532746991940908,
+        "validation_loss": 0.6845789551734924
+      },
+      {
+        "epoch": 38,
+        "train_loss": 0.6604037242276328,
+        "validation_loss": 0.6527142524719238
+      },
+      {
+        "epoch": 39,
+        "train_loss": 0.6539105989038945,
+        "validation_loss": 0.7194845080375671
+      },
+      {
+        "epoch": 40,
+        "train_loss": 0.6409805602260998,
+        "validation_loss": 0.6829782128334045
+      },
+      {
+        "epoch": 41,
+        "train_loss": 0.6416055873036385,
+        "validation_loss": 0.6799160838127136
+      },
+      {
+        "epoch": 42,
+        "train_loss": 0.6516940114753587,
+        "validation_loss": 0.7029093503952026
+      },
+      {
+        "epoch": 43,
+        "train_loss": 0.6262867848787989,
+        "validation_loss": 0.6970212459564209
+      },
+      {
+        "epoch": 44,
+        "train_loss": 0.6390832630651337,
+        "validation_loss": 0.6211858987808228
+      },
+      {
+        "epoch": 45,
+        "train_loss": 0.6430318285311971,
+        "validation_loss": 0.6662518978118896
+      },
+      {
+        "epoch": 46,
+        "train_loss": 0.6397595852613449,
+        "validation_loss": 0.6233855485916138
+      },
+      {
+        "epoch": 47,
+        "train_loss": 0.6527090947542872,
+        "validation_loss": 0.5892272591590881
+      },
+      {
+        "epoch": 48,
+        "train_loss": 0.65669750975711,
+        "validation_loss": 0.6707352995872498
+      },
+      {
+        "epoch": 49,
+        "train_loss": 0.624659517620291,
+        "validation_loss": 0.6710780262947083
+      },
+      {
+        "epoch": 50,
+        "train_loss": 0.6150235467723437,
+        "validation_loss": 0.6317368745803833
+      },
+      {
+        "epoch": 51,
+        "train_loss": 0.6205817584480559,
+        "validation_loss": 0.6803082823753357
+      },
+      {
+        "epoch": 52,
+        "train_loss": 0.6383704824107034,
+        "validation_loss": 0.5691972970962524
+      },
+      {
+        "epoch": 53,
+        "train_loss": 0.6871520772576332,
+        "validation_loss": 0.6379452347755432
+      },
+      {
+        "epoch": 54,
+        "train_loss": 0.6291175233466285,
+        "validation_loss": 0.6441231369972229
+      },
+      {
+        "epoch": 55,
+        "train_loss": 0.6208737901278905,
+        "validation_loss": 0.6165595054626465
+      },
+      {
+        "epoch": 56,
+        "train_loss": 0.6123449600168637,
+        "validation_loss": 0.6630029678344727
+      },
+      {
+        "epoch": 57,
+        "train_loss": 0.6117514987077032,
+        "validation_loss": 0.6546455025672913
+      },
+      {
+        "epoch": 58,
+        "train_loss": 0.612997633431639,
+        "validation_loss": 0.6011264324188232
+      },
+      {
+        "epoch": 59,
+        "train_loss": 0.6218682836209025,
+        "validation_loss": 0.6791737675666809
+      },
+      {
+        "epoch": 60,
+        "train_loss": 0.5958022475242615,
+        "validation_loss": 0.6756786704063416
+      },
+      {
+        "epoch": 61,
+        "train_loss": 0.5967222335083144,
+        "validation_loss": 0.6078317761421204
+      },
+      {
+        "epoch": 62,
+        "train_loss": 0.5951883384159633,
+        "validation_loss": 0.6934013962745667
+      },
+      {
+        "epoch": 63,
+        "train_loss": 0.5863586762121745,
+        "validation_loss": 0.642372190952301
+      },
+      {
+        "epoch": 64,
+        "train_loss": 0.6042008380804743,
+        "validation_loss": 0.7616063952445984
+      },
+      {
+        "epoch": 65,
+        "train_loss": 0.6383785669292722,
+        "validation_loss": 0.7125798463821411
+      },
+      {
+        "epoch": 66,
+        "train_loss": 0.641467818404947,
+        "validation_loss": 0.5687670111656189
+      },
+      {
+        "epoch": 67,
+        "train_loss": 0.6406079837254115,
+        "validation_loss": 0.5078381896018982
+      },
+      {
+        "epoch": 68,
+        "train_loss": 0.6802209481596947,
+        "validation_loss": 0.6341840624809265
+      },
+      {
+        "epoch": 69,
+        "train_loss": 0.6277592748403549,
+        "validation_loss": 0.7304103970527649
+      },
+      {
+        "epoch": 70,
+        "train_loss": 0.6132291053022657,
+        "validation_loss": 0.6578335165977478
+      },
+      {
+        "epoch": 71,
+        "train_loss": 0.608295421728066,
+        "validation_loss": 0.6742932200431824
+      },
+      {
+        "epoch": 72,
+        "train_loss": 0.5866047812359674,
+        "validation_loss": 0.6375453472137451
+      },
+      {
+        "epoch": 73,
+        "train_loss": 0.5817658867154802,
+        "validation_loss": 0.6179591417312622
+      },
+      {
+        "epoch": 74,
+        "train_loss": 0.5771835972155843,
+        "validation_loss": 0.639622151851654
+      },
+      {
+        "epoch": 75,
+        "train_loss": 0.5857913477080209,
+        "validation_loss": 0.6177978515625
+      },
+      {
+        "epoch": 76,
+        "train_loss": 0.5927413968103272,
+        "validation_loss": 0.6091600656509399
+      },
+      {
+        "epoch": 77,
+        "train_loss": 0.5772225975990295,
+        "validation_loss": 0.5841919779777527
+      },
+      {
+        "epoch": 78,
+        "train_loss": 0.5973636608038629,
+        "validation_loss": 0.6185389161109924
+      },
+      {
+        "epoch": 79,
+        "train_loss": 0.6025782634105001,
+        "validation_loss": 0.622298538684845
+      },
+      {
+        "epoch": 80,
+        "train_loss": 0.5917974120804241,
+        "validation_loss": 0.6810617446899414
+      },
+      {
+        "epoch": 81,
+        "train_loss": 0.5863513222762516,
+        "validation_loss": 0.6852735877037048
+      },
+      {
+        "epoch": 82,
+        "train_loss": 0.6265458317739623,
+        "validation_loss": 0.6671695113182068
+      }
+    ],
+    "validation": {
+      "mae_m3_s": 0.08828008186277078,
+      "rmse_m3_s": 0.114566545225763,
+      "r2": 0.15832609323203983,
+      "mbe_m3_s": -0.0020063455579472883
+    },
+    "locked_test": {
+      "mae_m3_s": 0.14567165266445958,
+      "rmse_m3_s": 0.18996698902501183,
+      "r2": -0.003052043416861272,
+      "mbe_m3_s": -0.034751119312351815
+    },
+    "weights_dir": "weights/31v_direct/h80/lstm",
+    "weight_file": "model.pth",
+    "scaler_file": "target_scaler.json",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/lstm_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/lstm_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 22.313,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "dlinear": {
+    "model": "dlinear",
+    "horizon_steps": 80,
+    "kind": "torch",
+    "started_at": "2026-08-21T10:35:27.370767+00:00",
+    "fit_success": true,
+    "epochs_completed": 17,
+    "best_epoch": 1,
+    "best_validation_loss": 0.592886745929718,
+    "training_history": [
+      {
+        "epoch": 0,
+        "train_loss": 0.9809237101248333,
+        "validation_loss": 1.483827829360962
+      },
+      {
+        "epoch": 1,
+        "train_loss": 1.2194275049226624,
+        "validation_loss": 0.592886745929718
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2135719808084624,
+        "validation_loss": 0.8222439289093018
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2042400968926295,
+        "validation_loss": 0.9882802963256836
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.1301375997917993,
+        "validation_loss": 0.9350048899650574
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.048104674901281,
+        "validation_loss": 0.8735952973365784
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.9957668504544667,
+        "validation_loss": 0.8511240482330322
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.9665944870029177,
+        "validation_loss": 0.8438202142715454
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.9476382919720241,
+        "validation_loss": 0.8380311727523804
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.9329770539488111,
+        "validation_loss": 0.8316105008125305
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.9208711100476129,
+        "validation_loss": 0.8245862126350403
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.9106016056878227,
+        "validation_loss": 0.8171462416648865
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.9017248911517007,
+        "validation_loss": 0.8095648884773254
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.8939558178186416,
+        "validation_loss": 0.802090048789978
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.8870937777417046,
+        "validation_loss": 0.7949203848838806
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.8809883096388408,
+        "validation_loss": 0.7881991267204285
+      },
+      {
+        "epoch": 16,
+        "train_loss": 0.8755195775202342,
+        "validation_loss": 0.7820172309875488
+      }
+    ],
+    "validation": {
+      "mae_m3_s": 0.09354306950554864,
+      "rmse_m3_s": 0.12378868417923991,
+      "r2": 0.01736976586022787,
+      "mbe_m3_s": -0.022973383207215935
+    },
+    "locked_test": {
+      "mae_m3_s": 0.15050338336783417,
+      "rmse_m3_s": 0.19541716759364555,
+      "r2": -0.061433076634707096,
+      "mbe_m3_s": -0.04164643808806812
+    },
+    "weights_dir": "weights/31v_direct/h80/dlinear",
+    "weight_file": "model.pth",
+    "scaler_file": "target_scaler.json",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/dlinear_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/dlinear_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 3.388,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  },
+  "gru": {
+    "model": "gru",
+    "horizon_steps": 80,
+    "kind": "torch",
+    "started_at": "2026-08-21T10:35:30.758528+00:00",
+    "fit_success": true,
+    "epochs_completed": 16,
+    "best_epoch": 0,
+    "best_validation_loss": 0.6274147629737854,
+    "training_history": [
+      {
+        "epoch": 0,
+        "train_loss": 1.0033443410481726,
+        "validation_loss": 0.6274147629737854
+      },
+      {
+        "epoch": 1,
+        "train_loss": 1.06639587027686,
+        "validation_loss": 0.6966283321380615
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.9913395464420318,
+        "validation_loss": 0.678211510181427
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.9857982814311981,
+        "validation_loss": 0.6920405626296997
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.9745364129543305,
+        "validation_loss": 0.6867722868919373
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.9695379876664707,
+        "validation_loss": 0.7050842642784119
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.9574766963720321,
+        "validation_loss": 0.7307372689247131
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.9499404568757329,
+        "validation_loss": 0.7664518356323242
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.9384036741086415,
+        "validation_loss": 0.7796558737754822
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.9305197009018489,
+        "validation_loss": 0.8829224109649658
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.9226207967315402,
+        "validation_loss": 0.8597699403762817
+      },
+      {
+        "epoch": 11,
+        "train_loss": 0.894377880862781,
+        "validation_loss": 0.8922194242477417
+      },
+      {
+        "epoch": 12,
+        "train_loss": 0.8672317177057266,
+        "validation_loss": 0.8337266445159912
+      },
+      {
+        "epoch": 13,
+        "train_loss": 0.8642973742314748,
+        "validation_loss": 0.7878174781799316
+      },
+      {
+        "epoch": 14,
+        "train_loss": 0.8500391014984676,
+        "validation_loss": 0.8317244052886963
+      },
+      {
+        "epoch": 15,
+        "train_loss": 0.8466990896633693,
+        "validation_loss": 0.755379319190979
+      }
+    ],
+    "validation": {
+      "mae_m3_s": 0.09921507961821538,
+      "rmse_m3_s": 0.12734224033210487,
+      "r2": -0.039855999181546586,
+      "mbe_m3_s": -0.00783015525005654
+    },
+    "locked_test": {
+      "mae_m3_s": 0.1479909759877436,
+      "rmse_m3_s": 0.1883864148415411,
+      "r2": 0.013569820333908855,
+      "mbe_m3_s": 0.021974604504198143
+    },
+    "weights_dir": "weights/31v_direct/h80/gru",
+    "weight_file": "model.pth",
+    "scaler_file": "target_scaler.json",
+    "predictions": {
+      "validation": "predictions/31v_direct/h80/gru_validation_predictions.csv",
+      "locked_test": "predictions/31v_direct/h80/gru_locked_test_predictions.csv"
+    },
+    "runtime_seconds": 4.421,
+    "fit_converged": true,
+    "warnings": [],
+    "convergence_note": "推断依据: 28/28 fit_success; elasticnet max_iter=5000, mlp early_stopping=True, 无收敛失败; warning 未 instrument(本次构建未捕获)"
+  }
+}

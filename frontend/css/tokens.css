@@ -1,0 +1,26 @@
+:root {
+  color-scheme: dark;
+  --bg-0: #171717;
+  --bg-1: #1f1f1f;
+  --bg-2: #262626;
+  --bg-3: #2c2c2c;
+  --line: #373737;
+  --line-soft: rgba(255, 255, 255, 0.08);
+  --text-1: #f1f1f1;
+  --text-2: #c4c4c4;
+  --text-3: #8b8b8b;
+  --steel: #a8a8a8;
+  --steel-hover: #c6c6c6;
+  --ice: #9ecbff;
+  --teal: #91c7b1;
+  --amber: #d5ad73;
+  --danger: #df8b8b;
+  --rail-width: 68px;
+  --header-height: 62px;
+  --content-max: 1104px;
+  --composer-max: 1104px;
+  --radius-sm: 12px;
+  --radius-md: 22px;
+  --font-ui: "Segoe UI Variable Text", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --font-data: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+}

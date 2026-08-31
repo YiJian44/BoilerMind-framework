@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BoilerMind 对话式锅炉科研工作台">
+  <title>BoilerMind · 研究对话</title>
+  <link rel="stylesheet" href="css/tokens.css?v=20260814-codex1">
+  <link rel="stylesheet" href="css/base.css?v=20260814-codex1">
+  <link rel="stylesheet" href="css/layout.css?v=20260814-flowfix1">
+  <link rel="stylesheet" href="css/components.css?v=20260829-localize2">
+  <link rel="stylesheet" href="css/responsive.css?v=20260814-gatefix1">
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <aside class="rail" aria-label="主导航">
+      <button class="brand-button" type="button" data-action="toggle-drawer" aria-label="展开对话抽屉" aria-expanded="false">
+        <span class="brand-orbit" aria-hidden="true">BM</span>
+      </button>
+      <button class="rail-button rail-button-primary" type="button" data-action="new-chat" aria-label="新建对话">
+        <img src="assets/icons/plus-lg.svg" alt=""><span>新建对话</span>
+      </button>
+      <nav class="rail-nav" aria-label="工作区">
+        <button class="rail-button is-active" type="button" data-view="chat" aria-label="研究对话"><img src="assets/icons/book.svg" alt=""><span>研究对话</span></button>
+        <button class="rail-button" type="button" data-view="unity" aria-label="Unity 数字孪生"><img src="assets/icons/pc-display.svg" alt=""><span>数字孪生</span></button>
+        <button class="rail-button" type="button" data-view="knowledge" aria-label="知识图谱"><img src="assets/icons/database.svg" alt=""><span>知识图谱</span></button>
+        <button class="rail-button" type="button" data-view="history" aria-label="历史任务"><img src="assets/icons/clock-history.svg" alt=""><span>历史研究</span></button>
+      </nav>
+      <div class="rail-spacer"></div>
+    </aside>
+
+    <div class="drawer-backdrop" data-action="close-drawer"></div>
+    <aside class="conversation-drawer" id="conversationDrawer" aria-label="对话抽屉" aria-hidden="true">
+      <header class="drawer-header">
+        <div>
+          <span class="overline">WORKSPACE</span>
+          <h2>研究对话</h2>
+        </div>
+        <button class="icon-button" type="button" data-action="close-drawer" aria-label="关闭抽屉"><img src="assets/icons/x-lg.svg" alt=""></button>
+      </header>
+      <button class="drawer-new-button" type="button" data-action="new-chat"><img src="assets/icons/plus-lg.svg" alt="">新建对话</button>
+      <label class="drawer-search">
+        <img src="assets/icons/search.svg" alt="">
+        <input id="historySearch" type="search" placeholder="搜索研究问题">
+      </label>
+      <section class="drawer-section">
+        <div class="drawer-section-title"><span>最近对话</span><span id="historyCount">0</span></div>
+        <div class="conversation-list" id="conversationList"></div>
+      </section>
+      <footer class="drawer-footer">
+        <span class="system-dot" id="drawerSystemDot"></span>
+        <span id="drawerSystemText">正在连接后端</span>
+      </footer>
+    </aside>
+
+    <main class="workspace">
+      <header class="workspace-header">
+        <div class="workspace-heading">
+          <button class="mobile-menu-button" type="button" data-action="toggle-drawer" aria-label="打开导航"><img src="assets/icons/list.svg" alt=""></button>
+          <div>
+            <span class="overline">BOILERMIND / RESEARCH</span>
+            <h1 id="viewTitle">研究对话</h1>
+          </div>
+        </div>
+        <button class="progress-pill" id="progressPill" type="button" data-view="chat">
+          <span class="progress-dot"></span>
+          <span id="progressPillText">正在连接后端</span>
+        </button>
+      </header>
+
+      <section class="view is-active" id="chatView" data-view-panel="chat">
+        <aside class="process-sidebar" id="processSidebar" aria-label="六阶段研究索引" hidden></aside>
+        <div class="conversation-scroll" id="conversationScroll">
+          <section class="welcome-state" id="welcomeState">
+            <div class="welcome-hero">
+              <div>
+                <span class="overline">BOILERMIND RESEARCH STUDIO</span>
+                <h2>把一个锅炉问题，<br>变成可验证的结论。</h2>
+                <p>选择一条研究路径，BoilerMind 会完成问题拆解、证据组织、实验验证与科研报告生成。</p>
+              </div>
+              <aside class="welcome-loop" aria-label="科研工作流">
+                <span>科研工作流</span>
+                <strong>问题 → 证据 → 实验 → 结论</strong>
+                <p>从真实数据与约束出发，保留每一步可追溯证据。</p>
+              </aside>
+            </div>
+            <div class="welcome-prompts-head"><span>选择研究起点</span><small>点击任一卡片即可填入研究问题</small></div>
+            <div class="example-prompts" id="examplePrompts">
+              <button class="prompt-card prompt-card-model" type="button" data-prompt="比较 Ridge、BayesianRidge、RandomForest 与 Persistence 对蒸汽体积流量未来10分钟（h40）的预测">
+                <span class="prompt-index">01</span><span class="prompt-type">模型对照</span><h3>预测精度评估</h3>
+                <p>比较 Ridge、BayesianRidge、RandomForest 与 Persistence 对蒸汽体积流量未来10分钟（h40）的预测</p><span class="prompt-action">开始预测研究 <b>→</b></span>
+              </button>
+              <button class="prompt-card prompt-card-data" type="button" data-prompt="分析最新锅炉数据，识别数据属性（非线性、时序、稀疏化、降维、非高斯），模型库里面哪个模型软测蒸汽体积量V的误差最小">
+                <span class="prompt-index">02</span><span class="prompt-type">数据画像</span><h3>模型选型诊断</h3>
+                <p>分析最新锅炉数据，识别数据属性（非线性、时序、稀疏化、降维、非高斯），模型库里面哪个模型软测蒸汽体积量V的误差最小</p><span class="prompt-action">开始数据研究 <b>→</b></span>
+              </button>
+              <button class="prompt-card prompt-card-control" type="button" data-prompt="在汽包压力不超过23MPa的限制下，怎么调节给煤、给水、送风和汽包压力，使蒸汽体积量V上升15%，并将验证结果推送到Unity？">
+                <span class="prompt-index">03</span><span class="prompt-type">控制优化</span><h3>约束下提升产量</h3>
+                <p>在汽包压力不超过23MPa的限制下，怎么调节给煤、给水、送风和汽包压力，使蒸汽体积量V上升15%，并将验证结果推送到Unity？</p><span class="prompt-action">开始控制研究 <b>→</b></span>
+              </button>
+            </div>
+          </section>
+          <div class="message-stream" id="messageStream" aria-live="polite"></div>
+        </div>
+        <button class="new-progress-button" id="newProgressButton" type="button" hidden>有新进展</button>
+        <form class="composer" id="composerForm">
+          <div class="attachment-list" id="attachmentList"></div>
+          <textarea id="composerInput" rows="1" maxlength="1000" placeholder="输入你的锅炉研究问题……" aria-label="研究问题"></textarea>
+          <div class="composer-footer">
+            <div class="composer-tools">
+              <label class="tool-button tool-button-icon" for="fileInput" aria-label="添加资料" title="添加资料"><img src="assets/icons/paperclip.svg" alt=""></label>
+              <input id="fileInput" type="file" multiple hidden>
+            </div>
+            <div class="composer-actions">
+              <div class="mode-select" id="modeSelect">
+                <select id="composerMode" class="sr-only" tabindex="-1" aria-hidden="true">
+                  <option value="chat">对话</option>
+                  <option value="research">直接研究</option>
+                </select>
+                <button class="mode-trigger" id="modeTrigger" type="button" aria-haspopup="menu" aria-expanded="false">
+                  <span id="modeTriggerLabel">对话</span><img src="assets/icons/chevron-down.svg" alt="">
+                </button>
+                <div class="mode-menu" id="modeMenu" role="menu" hidden>
+                  <button type="button" role="menuitemradio" aria-checked="true" data-mode-value="chat"><span>对话</span><small>工程问答</small></button>
+                  <button type="button" role="menuitemradio" aria-checked="false" data-mode-value="research"><span>直接研究</span><small>启动完整实验</small></button>
+                </div>
+              </div>
+              <button class="send-button" id="sendButton" type="submit" aria-label="发送"><img src="assets/icons/arrow-up.svg" alt=""><span>发送</span></button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="view feature-view" id="historyView" data-view-panel="history">
+        <div class="section-intro"><span class="overline">ARCHIVE</span><h2>历史研究</h2><p>查看已运行的真实研究任务和报告。</p></div>
+        <div class="history-toolbar"><input id="fullHistorySearch" type="search" placeholder="搜索研究问题"><select id="historyStatus"><option value="">全部状态</option><option value="completed">已完成</option><option value="failed">执行失败</option><option value="running">运行中</option></select><button type="button" data-action="refresh-history"><img src="assets/icons/arrow-clockwise.svg" alt="">刷新</button></div>
+        <div class="history-table" id="historyTable"></div>
+      </section>
+
+      <section class="view feature-view" id="unityView" data-view-panel="unity">
+        <div class="feature-toolbar unity-toolbar"><div class="unity-toolbar-copy"><h2>Unity 数字孪生</h2><p>电站燃煤锅炉 WebGL 场景，进入页面后才加载运行资源。</p></div><button class="secondary-button" type="button" data-action="reload-unity">重新加载</button></div>
+        <div class="unity-stage" id="unityStage"><div class="feature-empty"><h3>数字孪生尚未加载</h3><p>Unity 运行文件来自 BoilerMind-framework-main/UnityWebgl。</p><button class="research-button" type="button" data-action="load-unity">加载 Unity</button></div></div>
+      </section>
+
+      <section class="view feature-view" id="knowledgeView" data-view-panel="knowledge">
+        <div class="knowledge-hero">
+          <div><span class="overline">KNOWLEDGE GRAPHS</span><h2>BoilerMind 知识图谱</h2><p>一类由已验证科研假设持续沉淀的可增长演化图谱，另一类来自队友 Neo4j 快照的锅炉机理-变量知识图谱。</p></div>
+          <div class="knowledge-orbit" aria-hidden="true"><span>假设</span><i></i><b>证据</b><em>实验</em></div>
+        </div>
+        <div class="knowledge-tabs" role="tablist" aria-label="知识图谱类型">
+          <button class="knowledge-tab is-active" type="button" role="tab" aria-selected="true" data-kg-tab="evolution">科研假设演化图谱</button>
+          <button class="knowledge-tab" type="button" role="tab" aria-selected="false" data-kg-tab="team">知识图谱</button>
+        </div>
+
+        <div class="knowledge-panel is-active" id="knowledgeEvolutionPanel" data-kg-panel="evolution">
+          <div class="hypothesis-status-grid" id="knowledgeStatusGrid" aria-label="假设科学状态">
+            <article class="supported"><span>0</span><div><h3>得到支持</h3><p>正在读取演化图谱……</p></div></article>
+            <article class="partial"><span>0</span><div><h3>部分支持</h3><p>正在读取演化图谱……</p></div></article>
+            <article class="insufficient"><span>0</span><div><h3>证据不足</h3><p>正在读取演化图谱……</p></div></article>
+            <article class="falsified"><span>0</span><div><h3>被证伪</h3><p>正在读取演化图谱……</p></div></article>
+          </div>
+          <div class="knowledge-flow"><span>科研问题</span><i>→</i><span>科学假设</span><i>→</i><span>实验验证</span><i>→</i><span>科学裁决</span><i>→</i><strong>知识沉淀与演化</strong></div>
+          <div class="knowledge-live-toolbar"><div><span>LIVE SCIENTIFIC MEMORY</span><strong id="knowledgeSummary">正在汇总已验证科研假设</strong></div><button class="secondary-button" type="button" data-action="refresh-knowledge">刷新知识图谱</button></div>
+          <div class="knowledge-live" id="knowledgeGraph" aria-live="polite"><div class="feature-empty"><h3>正在构建知识图谱</h3><p>从演化图谱读取假设、证据、实验和科学裁决。</p></div></div>
+        </div>
+
+        <div class="knowledge-panel" id="knowledgeTeamPanel" data-kg-panel="team" hidden>
+          <div class="knowledge-live-toolbar"><div><span>TEAM NEO4J KNOWLEDGE GRAPH</span><strong id="teamSummary">正在读取队友知识图谱……</strong></div><button class="secondary-button" type="button" data-action="refresh-team-graph">刷新知识图谱</button></div>
+          <div class="kg-team-controls">
+            <label class="kg-toggle"><input type="checkbox" id="teamVarToggle"><span>显示变量层</span></label>
+            <label class="kg-toggle"><input type="checkbox" id="teamCorrToggle" disabled><span>显示变量相关性边</span></label>
+            <label class="kg-threshold">阈值 <select id="teamCorrThreshold"><option value="0.95" selected>|r| ≥ 0.95</option><option value="0.90">|r| ≥ 0.90</option><option value="0.80">|r| ≥ 0.80</option></select></label>
+            <span class="kg-team-hint">默认只显示机理层语义关系 · 可拖动 · 悬停高亮关系链 · 点击节点查看详情</span>
+          </div>
+          <div class="kg-team-wrap" id="knowledgeTeamGraph"><div class="feature-empty"><h3>正在构建知识图谱</h3><p>读取队友 Neo4j 快照（286 节点 / 8212 关系）。</p></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="reportView" data-view-panel="report">
+        <div class="report-toolbar"><button type="button" data-action="back-to-chat"><img src="assets/icons/chevron-left.svg" alt="">返回对话</button><div class="report-actions"><button type="button" data-action="copy-report"><img src="assets/icons/copy.svg" alt="">复制结论</button><button type="button" data-action="download-report"><img src="assets/icons/file-earmark-text.svg" alt="">下载 JSON</button><button type="button" data-action="download-plan-pdf"><img src="assets/icons/file-earmark-text.svg" alt="">下载 PDF</button></div></div>
+        <article class="report-reader" id="reportReader"></article>
+      </section>
+    </main>
+
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  </div>
+
+  <script src="vendor/chart.umd.min.js?v=4.4.7"></script>
+  <script type="module" src="js/app.js?v=20260829-localize3"></script>
+</body>
+</html>
+
+
